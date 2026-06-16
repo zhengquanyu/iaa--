@@ -1,0 +1,223 @@
+{
+    "paths": {
+        "0": [
+            "puzzleSuccess",
+            0
+        ],
+        "1": [
+            "good",
+            0
+        ],
+        "2": [
+            "animalSound1",
+            0
+        ],
+        "3": [
+            "excellent",
+            0
+        ],
+        "4": [
+            "animalSound8",
+            0
+        ],
+        "5": [
+            "animalSound2",
+            0
+        ],
+        "6": [
+            "unbelievable",
+            0
+        ],
+        "7": [
+            "bgm",
+            0
+        ],
+        "8": [
+            "success",
+            0
+        ],
+        "9": [
+            "animalSound3",
+            0
+        ],
+        "10": [
+            "click2",
+            0
+        ],
+        "11": [
+            "animalSound5",
+            0
+        ],
+        "12": [
+            "animalSound7",
+            0
+        ],
+        "13": [
+            "amazing",
+            0
+        ],
+        "14": [
+            "animalSound4",
+            0
+        ],
+        "15": [
+            "Ka",
+            0
+        ],
+        "16": [
+            "animalSound0",
+            0
+        ],
+        "17": [
+            "animalSound6",
+            0
+        ],
+        "18": [
+            "magic",
+            0
+        ],
+        "19": [
+            "remove",
+            0
+        ],
+        "20": [
+            "great",
+            0
+        ],
+        "21": [
+            "click",
+            0
+        ]
+    },
+    "types": [
+        "cc.AudioClip"
+    ],
+    "uuids": [
+        "097npS6vhAV77AIgcL9s5e",
+        "2aI12DVq1PjpSKqEqzzbn1",
+        "2fRZkLFWlIFoHIM/PbJeAd",
+        "43ogYbP0pBtLFmbRjY84o5",
+        "4agZ8icbxG97nl9LgI8Lgg",
+        "4fScInqGtPj4HTAqckirJ1",
+        "51N3FYGthIrKce04fyDSQv",
+        "75QDtE5MVMHYwV8bPe6Fs6",
+        "76Dkxshd1Is4W4GZ4BH4A8",
+        "7fzZgmvvtAxZ+re9gb0wSi",
+        "81sKn19PNJK7+khIQxL7Kk",
+        "887xhDlzJJ/6qhdnJxkfxz",
+        "9aqZ0JkMFGYolhB2naC7vs",
+        "9bJQUvlvBPRI0QgbTRLWl7",
+        "9cbokLKQxHaJRRtWiL5HHP",
+        "c1Als7lbJOApzbBf04GHFb",
+        "c2+5y5PHVNq5xm1iOtre11",
+        "c9MlIPfN1Jb4GxAjuaP/ar",
+        "c90usGYHlIUaj3LlQpKSAX",
+        "d1EX+bMvBBmqXhuN6punVo",
+        "d4xP0nzQ5KLZbmdWFkBrPo",
+        "efWWz+pcNP0Zq6J7ZRbf41"
+    ],
+    "scenes": {},
+    "redirect": [],
+    "deps": [],
+    "packs": {},
+    "name": "audio",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": false,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            0,
+            "3d113",
+            1,
+            "9b6ca",
+            2,
+            "4ebb3",
+            3,
+            "78900",
+            4,
+            "ad44f",
+            5,
+            "de5b2",
+            6,
+            "27e5a",
+            7,
+            "bbee3",
+            8,
+            "2158f",
+            9,
+            "4c2a3",
+            10,
+            "e8863",
+            11,
+            "e9453",
+            12,
+            "c26da",
+            13,
+            "5080f",
+            14,
+            "2feff",
+            15,
+            "5ce3b",
+            16,
+            "e46cf",
+            17,
+            "671db",
+            18,
+            "8e2d4",
+            19,
+            "c9a27",
+            20,
+            "c93ed",
+            21,
+            "5da26"
+        ],
+        "native": [
+            0,
+            "de5dc",
+            1,
+            "17ac1",
+            2,
+            "00d0a",
+            3,
+            "bb022",
+            4,
+            "4b269",
+            5,
+            "f8344",
+            6,
+            "bb8bf",
+            7,
+            "93b98",
+            8,
+            "76ff0",
+            9,
+            "95625",
+            10,
+            "10eb6",
+            11,
+            "18099",
+            12,
+            "a5a67",
+            13,
+            "ca152",
+            14,
+            "c884e",
+            15,
+            "3f8de",
+            16,
+            "88c29",
+            17,
+            "a740e",
+            18,
+            "116ef",
+            19,
+            "d2a58",
+            20,
+            "6ccdd",
+            21,
+            "636c4"
+        ]
+    }
+}

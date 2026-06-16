@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "364Gg2cBFJAptqBlnceNFB"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "河马",
+            "rect": [
+                0,
+                0,
+                200,
+                156
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                200,
+                156
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

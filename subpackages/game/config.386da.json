@@ -1,0 +1,1906 @@
+{
+    "paths": {
+        "0": [
+            "texture/illustrated/animalGray/蝴蝶",
+            1
+        ],
+        "1": [
+            "texture/mainPanel/img_sy_jiangpai",
+            1
+        ],
+        "2": [
+            "texture/mainPanel/img_sy_btn_kaishi",
+            1
+        ],
+        "3": [
+            "texture/game/jdt",
+            1
+        ],
+        "4": [
+            "texture/illustrated/animal/螃蟹",
+            1
+        ],
+        "5": [
+            "texture/game/img_yx_btn_hong",
+            1
+        ],
+        "6": [
+            "texture/game/img_yx_gou",
+            1
+        ],
+        "7": [
+            "texture/illustrated/animalGray/松鼠",
+            1
+        ],
+        "8": [
+            "texture/illustrated/animalGray/考拉",
+            1
+        ],
+        "9": [
+            "texture/common/finger",
+            1
+        ],
+        "10": [
+            "texture/illustrated/animal/羊驼",
+            1
+        ],
+        "11": [
+            "texture/illustrated/animalGray/蚂蚁",
+            1
+        ],
+        "12": [
+            "texture/mainPanel/ksyx",
+            1
+        ],
+        "13": [
+            "texture/illustrated/animal/猫",
+            1
+        ],
+        "14": [
+            "texture/illustrated/animalGray/猫",
+            1
+        ],
+        "15": [
+            "texture/common/tailing_0009",
+            1
+        ],
+        "16": [
+            "texture/game/img_yx_zhu",
+            1
+        ],
+        "17": [
+            "texture/game/img_yx_ka",
+            1
+        ],
+        "18": [
+            "texture/game/img_yx_fanzhuan",
+            1
+        ],
+        "19": [
+            "texture/game/img_yx_zhuazou",
+            1
+        ],
+        "20": [
+            "texture/illustrated/animal/猫头鹰",
+            1
+        ],
+        "21": [
+            "texture/illustrated/animal/鹦鹉",
+            1
+        ],
+        "22": [
+            "texture/illustrated/animal/火烈鸟",
+            1
+        ],
+        "23": [
+            "texture/mainPanel/img_sy_fenxiang",
+            1
+        ],
+        "24": [
+            "texture/illustrated/animal/蝴蝶",
+            1
+        ],
+        "25": [
+            "texture/illustrated/animalGray/企鹅",
+            1
+        ],
+        "26": [
+            "texture/illustrated/animal/鳄鱼",
+            1
+        ],
+        "27": [
+            "texture/game/dsms",
+            1
+        ],
+        "28": [
+            "texture/illustrated/animal/青蛙",
+            1
+        ],
+        "29": [
+            "texture/illustrated/animal/蛇",
+            1
+        ],
+        "30": [
+            "texture/illustrated/animal/河马",
+            1
+        ],
+        "31": [
+            "texture/game/img_nd_di",
+            1
+        ],
+        "32": [
+            "texture/illustrated/animalGray/斑马",
+            1
+        ],
+        "33": [
+            "texture/mainPanel/img_yx_bg",
+            1
+        ],
+        "34": [
+            "texture/illustrated/img_tj_dkzhi",
+            1
+        ],
+        "35": [
+            "texture/game/img_yx_zat",
+            1
+        ],
+        "36": [
+            "texture/game/csms",
+            1
+        ],
+        "37": [
+            "texture/illustrated/animal/蚂蚁",
+            1
+        ],
+        "38": [
+            "texture/common/img_ty_btn_lv",
+            1
+        ],
+        "39": [
+            "texture/illustrated/animal/松鼠",
+            1
+        ],
+        "40": [
+            "texture/mainPanel/yxq",
+            1
+        ],
+        "41": [
+            "texture/game/ndbs1",
+            1
+        ],
+        "42": [
+            "texture/game/img_yx_t",
+            1
+        ],
+        "43": [
+            "texture/illustrated/animalGray/狗",
+            1
+        ],
+        "44": [
+            "spine/animal",
+            1
+        ],
+        "45": [
+            "texture/illustrated/animalGray/羊",
+            1
+        ],
+        "46": [
+            "texture/game/img_nd_jiantou",
+            1
+        ],
+        "47": [
+            "texture/illustrated/animalGray/鹦鹉",
+            1
+        ],
+        "48": [
+            "texture/illustrated/animal/孔雀",
+            1
+        ],
+        "49": [
+            "texture/illustrated/animalGray/青蛙",
+            1
+        ],
+        "50": [
+            "texture/illustrated/animalGray/老鼠",
+            1
+        ],
+        "51": [
+            "texture/game/particle",
+            6
+        ],
+        "52": [
+            "texture/illustrated/animal/斑马",
+            1
+        ],
+        "53": [
+            "texture/illustrated/animal/羊",
+            1
+        ],
+        "54": [
+            "texture/illustrated/animal/白狗",
+            1
+        ],
+        "55": [
+            "texture/illustrated/animal/企鹅",
+            1
+        ],
+        "56": [
+            "texture/common/tip",
+            1
+        ],
+        "57": [
+            "texture/game/img_yx_shp",
+            1
+        ],
+        "58": [
+            "texture/illustrated/animal/白鸽",
+            1
+        ],
+        "59": [
+            "texture/illustrated/animalGray/袋鼠",
+            1
+        ],
+        "60": [
+            "texture/illustrated/animalGray/孔雀",
+            1
+        ],
+        "61": [
+            "texture/illustrated/animalGray/兔子",
+            1
+        ],
+        "62": [
+            "texture/illustrated/img_tj_dk",
+            1
+        ],
+        "63": [
+            "texture/common/img_ty_btn_huang",
+            1
+        ],
+        "64": [
+            "texture/common/smoke3",
+            1
+        ],
+        "65": [
+            "texture/game/img_yx_btn_lv",
+            1
+        ],
+        "66": [
+            "texture/common/img_ty_ship",
+            1
+        ],
+        "67": [
+            "texture/illustrated/animalGray/白鸽",
+            1
+        ],
+        "68": [
+            "texture/illustrated/animalGray/河马",
+            1
+        ],
+        "69": [
+            "texture/game/img_yx_btn_lan",
+            1
+        ],
+        "70": [
+            "texture/illustrated/animalGray/鳄鱼",
+            1
+        ],
+        "71": [
+            "texture/illustrated/animalGray/蛇",
+            1
+        ],
+        "72": [
+            "texture/illustrated/animal/考拉",
+            1
+        ],
+        "73": [
+            "texture/illustrated/animalGray/猴子",
+            1
+        ],
+        "74": [
+            "texture/illustrated/animalGray/螃蟹",
+            1
+        ],
+        "75": [
+            "texture/mainPanel/img_sy_shezhi",
+            1
+        ],
+        "76": [
+            "texture/common/img_ty_dk",
+            1
+        ],
+        "77": [
+            "texture/game/img_yx_frenxiang",
+            1
+        ],
+        "78": [
+            "texture/illustrated/animal/兔子",
+            1
+        ],
+        "79": [
+            "texture/illustrated/animalGray/大象",
+            1
+        ],
+        "80": [
+            "texture/game/img_yx_dasan",
+            1
+        ],
+        "81": [
+            "texture/illustrated/animal/老鼠",
+            1
+        ],
+        "82": [
+            "texture/illustrated/animal/蜜蜂",
+            1
+        ],
+        "83": [
+            "texture/illustrated/animal/鸡",
+            1
+        ],
+        "84": [
+            "texture/common/img_ty_fenxiang",
+            1
+        ],
+        "85": [
+            "spine/animal",
+            4
+        ],
+        "86": [
+            "texture/illustrated/animal/乌龟",
+            1
+        ],
+        "87": [
+            "texture/illustrated/animalGray/火烈鸟",
+            1
+        ],
+        "88": [
+            "texture/mainPanel/img_sy_btn_lan",
+            1
+        ],
+        "89": [
+            "texture/illustrated/animalGray/猫头鹰",
+            1
+        ],
+        "90": [
+            "texture/mainPanel/img_sy_tuichu",
+            1
+        ],
+        "91": [
+            "texture/game/img_nd_zi",
+            1
+        ],
+        "92": [
+            "texture/mainPanel/img_sy_tujian",
+            1
+        ],
+        "93": [
+            "texture/game/jdtd",
+            1
+        ],
+        "94": [
+            "texture/illustrated/animalGray/熊猫",
+            1
+        ],
+        "95": [
+            "texture/illustrated/animal/袋鼠",
+            1
+        ],
+        "96": [
+            "texture/game/img_yx_guandk",
+            1
+        ],
+        "97": [
+            "texture/illustrated/animal/熊猫",
+            1
+        ],
+        "98": [
+            "texture/illustrated/animal/大象",
+            1
+        ],
+        "99": [
+            "texture/mainPanel/img_sy_btn_zong",
+            1
+        ],
+        "100": [
+            "texture/illustrated/animal/猴子",
+            1
+        ],
+        "101": [
+            "texture/illustrated/animalGray/羊驼",
+            1
+        ],
+        "102": [
+            "texture/illustrated/animal/狗",
+            1
+        ],
+        "103": [
+            "texture/illustrated/animalGray/蜜蜂",
+            1
+        ],
+        "104": [
+            "texture/illustrated/animalGray/乌龟",
+            1
+        ],
+        "105": [
+            "texture/common/img_ty_btn_cha",
+            1
+        ],
+        "106": [
+            "texture/illustrated/animalGray/白狗",
+            1
+        ],
+        "107": [
+            "texture/game/img_yx_yang",
+            1
+        ],
+        "108": [
+            "texture/common/img_ty_btn_zhi",
+            1
+        ],
+        "109": [
+            "texture/illustrated/animalGray/鸡",
+            1
+        ],
+        "110": [
+            "texture/common/finger",
+            3,
+            1
+        ],
+        "111": [
+            "texture/illustrated/animal/河马",
+            3,
+            1
+        ],
+        "112": [
+            "texture/game/img_yx_zat",
+            3,
+            1
+        ],
+        "113": [
+            "uiPrefab/mainPanel",
+            0
+        ],
+        "114": [
+            "texture/mainPanel/img_sy_btn_lan",
+            3,
+            1
+        ],
+        "115": [
+            "texture/mainPanel/img_sy_fenxiang",
+            3,
+            1
+        ],
+        "116": [
+            "texture/illustrated/animalGray/蚂蚁",
+            3,
+            1
+        ],
+        "117": [
+            "texture/game/img_yx_shp",
+            3,
+            1
+        ],
+        "118": [
+            "texture/illustrated/animal/螃蟹",
+            3,
+            1
+        ],
+        "119": [
+            "texture/mainPanel/img_sy_btn_kaishi",
+            3,
+            1
+        ],
+        "120": [
+            "texture/game/img_yx_t",
+            3,
+            1
+        ],
+        "121": [
+            "texture/game/img_nd_zi",
+            3,
+            1
+        ],
+        "122": [
+            "texture/game/img_yx_ka",
+            3,
+            1
+        ],
+        "123": [
+            "texture/common/smoke3",
+            3,
+            1
+        ],
+        "124": [
+            "texture/mainPanel/img_sy_jiangpai",
+            3,
+            1
+        ],
+        "126": [
+            "texture/illustrated/animal/鹦鹉",
+            3,
+            1
+        ],
+        "127": [
+            "texture/illustrated/animalGray/松鼠",
+            3,
+            1
+        ],
+        "129": [
+            "texture/illustrated/animalGray/螃蟹",
+            3,
+            1
+        ],
+        "130": [
+            "texture/common/tip",
+            3,
+            1
+        ],
+        "131": [
+            "texture/illustrated/animalGray/猫头鹰",
+            3,
+            1
+        ],
+        "132": [
+            "texture/common/img_ty_btn_huang",
+            3,
+            1
+        ],
+        "133": [
+            "texture/illustrated/animalGray/孔雀",
+            3,
+            1
+        ],
+        "134": [
+            "texture/illustrated/animal/白鸽",
+            3,
+            1
+        ],
+        "135": [
+            "texture/illustrated/animal/兔子",
+            3,
+            1
+        ],
+        "136": [
+            "texture/illustrated/animal/蛇",
+            3,
+            1
+        ],
+        "137": [
+            "texture/illustrated/animalGray/老鼠",
+            3,
+            1
+        ],
+        "138": [
+            "texture/illustrated/animalGray/羊",
+            3,
+            1
+        ],
+        "139": [
+            "texture/illustrated/animalGray/斑马",
+            3,
+            1
+        ],
+        "140": [
+            "texture/game/img_yx_fanzhuan",
+            3,
+            1
+        ],
+        "142": [
+            "texture/illustrated/animal/猫头鹰",
+            3,
+            1
+        ],
+        "143": [
+            "texture/illustrated/animal/企鹅",
+            3,
+            1
+        ],
+        "144": [
+            "texture/illustrated/animal/熊猫",
+            3,
+            1
+        ],
+        "145": [
+            "texture/illustrated/animalGray/鳄鱼",
+            3,
+            1
+        ],
+        "146": [
+            "prefab/block",
+            0
+        ],
+        "147": [
+            "texture/game/img_yx_frenxiang",
+            3,
+            1
+        ],
+        "148": [
+            "texture/illustrated/animal/老鼠",
+            3,
+            1
+        ],
+        "149": [
+            "texture/game/img_yx_guandk",
+            3,
+            1
+        ],
+        "150": [
+            "texture/game/csms",
+            3,
+            1
+        ],
+        "151": [
+            "prefab/animal",
+            0
+        ],
+        "152": [
+            "texture/illustrated/animalGray/白狗",
+            3,
+            1
+        ],
+        "153": [
+            "texture/illustrated/animalGray/考拉",
+            3,
+            1
+        ],
+        "154": [
+            "texture/illustrated/animalGray/白鸽",
+            3,
+            1
+        ],
+        "155": [
+            "preload/uiPrefab/gamePanel",
+            0
+        ],
+        "156": [
+            "texture/common/img_ty_btn_zhi",
+            3,
+            1
+        ],
+        "157": [
+            "texture/illustrated/animal/猴子",
+            3,
+            1
+        ],
+        "158": [
+            "texture/common/img_ty_dk",
+            3,
+            1
+        ],
+        "159": [
+            "texture/illustrated/img_tj_dkzhi",
+            3,
+            1
+        ],
+        "160": [
+            "texture/illustrated/animalGray/狗",
+            3,
+            1
+        ],
+        "161": [
+            "texture/illustrated/animal/火烈鸟",
+            3,
+            1
+        ],
+        "162": [
+            "texture/illustrated/animalGray/袋鼠",
+            3,
+            1
+        ],
+        "163": [
+            "texture/illustrated/animalGray/熊猫",
+            3,
+            1
+        ],
+        "164": [
+            "texture/game/img_nd_jiantou",
+            3,
+            1
+        ],
+        "165": [
+            "prefab/illustrateAnimalItem",
+            0
+        ],
+        "166": [
+            "texture/illustrated/animal/青蛙",
+            3,
+            1
+        ],
+        "167": [
+            "texture/illustrated/animalGray/乌龟",
+            3,
+            1
+        ],
+        "168": [
+            "texture/illustrated/animal/松鼠",
+            3,
+            1
+        ],
+        "169": [
+            "texture/game/img_nd_di",
+            3,
+            1
+        ],
+        "170": [
+            "texture/illustrated/animalGray/猫",
+            3,
+            1
+        ],
+        "171": [
+            "texture/illustrated/animalGray/蝴蝶",
+            3,
+            1
+        ],
+        "173": [
+            "texture/illustrated/animal/大象",
+            3,
+            1
+        ],
+        "174": [
+            "prefab/animalM",
+            0
+        ],
+        "175": [
+            "texture/illustrated/animal/斑马",
+            3,
+            1
+        ],
+        "176": [
+            "texture/mainPanel/img_yx_bg",
+            3,
+            1
+        ],
+        "177": [
+            "prefab/grid",
+            0
+        ],
+        "178": [
+            "texture/illustrated/animalGray/河马",
+            3,
+            1
+        ],
+        "179": [
+            "prefab/tailing_smoke",
+            0
+        ],
+        "180": [
+            "spine/animal",
+            2
+        ],
+        "181": [
+            "texture/mainPanel/img_sy_tuichu",
+            3,
+            1
+        ],
+        "182": [
+            "texture/illustrated/animalGray/大象",
+            3,
+            1
+        ],
+        "183": [
+            "texture/mainPanel/img_sy_btn_zong",
+            3,
+            1
+        ],
+        "184": [
+            "texture/common/img_ty_btn_cha",
+            3,
+            1
+        ],
+        "185": [
+            "texture/illustrated/animal/蜜蜂",
+            3,
+            1
+        ],
+        "186": [
+            "prefab/tailing_smoke - 001",
+            0
+        ],
+        "187": [
+            "texture/mainPanel/img_sy_tujian",
+            3,
+            1
+        ],
+        "189": [
+            "texture/illustrated/animal/羊驼",
+            3,
+            1
+        ],
+        "190": [
+            "texture/illustrated/animal/鳄鱼",
+            3,
+            1
+        ],
+        "191": [
+            "texture/game/img_yx_btn_hong",
+            3,
+            1
+        ],
+        "192": [
+            "texture/illustrated/animalGray/火烈鸟",
+            3,
+            1
+        ],
+        "193": [
+            "texture/illustrated/animalGray/青蛙",
+            3,
+            1
+        ],
+        "194": [
+            "spine/animal",
+            3,
+            1
+        ],
+        "195": [
+            "texture/illustrated/animal/白狗",
+            3,
+            1
+        ],
+        "196": [
+            "texture/illustrated/animal/蝴蝶",
+            3,
+            1
+        ],
+        "197": [
+            "texture/game/img_yx_btn_lan",
+            3,
+            1
+        ],
+        "198": [
+            "texture/mainPanel/img_sy_shezhi",
+            3,
+            1
+        ],
+        "199": [
+            "texture/game/img_yx_yang",
+            3,
+            1
+        ],
+        "200": [
+            "texture/common/img_ty_fenxiang",
+            3,
+            1
+        ],
+        "201": [
+            "texture/illustrated/animalGray/企鹅",
+            3,
+            1
+        ],
+        "202": [
+            "texture/common/move3",
+            5
+        ],
+        "203": [
+            "texture/game/img_yx_btn_lv",
+            3,
+            1
+        ],
+        "204": [
+            "texture/illustrated/animalGray/蛇",
+            3,
+            1
+        ],
+        "205": [
+            "texture/mainPanel/ksyx",
+            3,
+            1
+        ],
+        "206": [
+            "texture/illustrated/animal/孔雀",
+            3,
+            1
+        ],
+        "207": [
+            "texture/illustrated/animalGray/蜜蜂",
+            3,
+            1
+        ],
+        "208": [
+            "texture/mainPanel/yxq",
+            3,
+            1
+        ],
+        "209": [
+            "texture/game/dsms",
+            3,
+            1
+        ],
+        "210": [
+            "texture/common/img_ty_ship",
+            3,
+            1
+        ],
+        "212": [
+            "texture/game/img_yx_zhuazou",
+            3,
+            1
+        ],
+        "213": [
+            "texture/game/img_yx_gou",
+            3,
+            1
+        ],
+        "214": [
+            "texture/game/img_yx_dasan",
+            3,
+            1
+        ],
+        "215": [
+            "texture/common/img_ty_btn_lv",
+            3,
+            1
+        ],
+        "216": [
+            "texture/illustrated/animalGray/羊驼",
+            3,
+            1
+        ],
+        "217": [
+            "texture/illustrated/animal/鸡",
+            3,
+            1
+        ],
+        "218": [
+            "texture/illustrated/animalGray/兔子",
+            3,
+            1
+        ],
+        "219": [
+            "texture/illustrated/animal/蚂蚁",
+            3,
+            1
+        ],
+        "220": [
+            "texture/illustrated/animalGray/鹦鹉",
+            3,
+            1
+        ],
+        "221": [
+            "texture/illustrated/animal/羊",
+            3,
+            1
+        ],
+        "222": [
+            "texture/common/tailing_0009",
+            3,
+            1
+        ],
+        "223": [
+            "texture/illustrated/animal/乌龟",
+            3,
+            1
+        ],
+        "224": [
+            "texture/illustrated/animal/狗",
+            3,
+            1
+        ],
+        "225": [
+            "texture/illustrated/animalGray/猴子",
+            3,
+            1
+        ],
+        "226": [
+            "prefab/cd",
+            0
+        ],
+        "227": [
+            "texture/illustrated/animalGray/鸡",
+            3,
+            1
+        ],
+        "228": [
+            "texture/illustrated/animal/考拉",
+            3,
+            1
+        ],
+        "229": [
+            "texture/game/jdt",
+            3,
+            1
+        ],
+        "230": [
+            "texture/illustrated/animal/袋鼠",
+            3,
+            1
+        ],
+        "231": [
+            "texture/illustrated/img_tj_dk",
+            3,
+            1
+        ],
+        "232": [
+            "texture/game/img_yx_zhu",
+            3,
+            1
+        ],
+        "233": [
+            "texture/game/ndbs1",
+            3,
+            1
+        ],
+        "234": [
+            "texture/game/jdtd",
+            3,
+            1
+        ],
+        "235": [
+            "texture/illustrated/animal/猫",
+            3,
+            1
+        ]
+    },
+    "types": [
+        "cc.Prefab",
+        "cc.Texture2D",
+        "sp.SkeletonData",
+        "cc.SpriteFrame",
+        "cc.Asset",
+        "cc.AnimationClip",
+        "cc.ParticleAsset"
+    ],
+    "uuids": [
+        "016qCcsKNAh5ot0EUk24I8",
+        "05ylreC25PUrwBZVolDimL",
+        "06xLDhfN1DZKfhdoEfSo+l",
+        "07OJOL+ABKDoWkM/q4gi1b",
+        "07pMQ8UHVFMrCE1OCzJzX6",
+        "079gRryEBJ75HHs4ZWvMxS",
+        "08BrRg/yVA+p1pdI4XffEM",
+        "0dXDKXNoVJR5Pi3wZHN5nc",
+        "0e9CMyPCBPTaxWgQ2pmUor",
+        "0fWGOndkBP+LBsMTQdihBq",
+        "10XnSkCM9I7KL1Pm+tHXW6",
+        "120hQ9XkREbJ2+bG9yywOO",
+        "137eOD28VHJIOj6m03aCei",
+        "15IOR1SjBCe53XCyoW8+2U",
+        "19xqF0IdZJH5Fxf/Aw/y/7",
+        "1aBD7pGgJM3YESXeJAgkPh",
+        "1aZjaSJQBMFLdkIFLSp0r5",
+        "1cykmW58lNl6EsRLDHZJ8A",
+        "1dgdv/iZ9Hv7dWYKI5R6jD",
+        "1fcR+29/ZFgLgTzA/VU5tw",
+        "22+RW9wNVMCL1bGB+uvhJo",
+        "23Ut6LJfBGAK2MgonbQ6vf",
+        "28Xc023KFJjZ8C3/y6rW3J",
+        "28v94vYfBLtpx8E3CPIq6Q",
+        "2afcyQ8tVO5bxOn2CgtzC0",
+        "2bRw+z119OMIinZ6wJ43if",
+        "31xhdHUPVLLIqlDdB0pcB1",
+        "33Q9LlvnJI44vwpb+9qgjE",
+        "35iGK9QGdNP4vpyK4m1Fea",
+        "36WNb5DgVN24x0gmqSzm/l",
+        "364Gg2cBFJAptqBlnceNFB",
+        "37eYu4atpNjq5r97LdJBUg",
+        "3aktgWK79OHKyqPv1amq4P",
+        "3c2tQOb/xKKZ8hGbWhx3vB",
+        "3fJ4N5QZtJYqEaqTsYdLqF",
+        "40Oue06yhPXpht/gYuOQWQ",
+        "42Ct+jv5NN/4FragiGk6Sd",
+        "44ERhFLOZNY4luLL3aTjWF",
+        "50OLAUftpDd7K6o8DuIFZe",
+        "51L3GGP4lD2JsQdiwVt00U",
+        "55Cz6zsCFJa62n+a70ayy+",
+        "5ecl1L0RZEW7vR6k2dcfCt",
+        "5euWl7d79A8ouOObHNcUS/",
+        "64xqB4MTNJiLvpIgDD7mqL",
+        "6bxfyTtANLMaDhfM/1TEXX",
+        "73kjvZottLObGn+2VrWBXt",
+        "79Lc0RMMRBHofGS4ahL1e8",
+        "7cyHMNySNGWYVcjapzZ86s",
+        "7dKurQ+l9P3ZEMPCZ3a4rB",
+        "80QyrMKJZPyI8HS5HcIiAP",
+        "82BNMWuG5DuZn60rXlPFg9",
+        "83VV2Qd2tOkIkiSolco7o4",
+        "84VkDDhtdGH60kPX4QRKrA",
+        "843IBwTqBNfat0g1/BRE6C",
+        "86AmlGm6lC/bVnDK0OCF+o",
+        "87aKO6dV5KzZ6bAzsoMJTZ",
+        "8bzfHPgTRPk5rkXIQWpjz1",
+        "90EZ2M3EFKj4tgDIVu02hI",
+        "94Zlggwk5GNpWRwnlpIi6R",
+        "96gwyfCaNFw4NdDvT4izNe",
+        "9cUhuv3DRIAL+KM71gN/sF",
+        "9f6MHJg1xLhbnFlz49WzNY",
+        "a61+1UgS1GzYtvf/KyfzXW",
+        "aa3A5muVVO5JvWEf2W1qA4",
+        "abEoJazFNIdLLiYWc/9o1n",
+        "acsAeBJFxHrK4n7ini/UlS",
+        "adb05/ZF9N2KsjPMKDv9br",
+        "aftoOriA5BwLnwPNgAU4Y7",
+        "b1rduKNnhIfL2K/ICLrogn",
+        "b4o+4ToXdIDp+vrUsldoah",
+        "b4ssYTE3dMFpbwcDSXzVXE",
+        "b7VqNS8pZM0LZCPZyGF//i",
+        "b7WLcCiKBK4ZcYEVdYgBlA",
+        "bcqZP+XxFCD5HDjOHlofcF",
+        "bfysfVTYBF0Zac9UnpMiAI",
+        "c1HqQ1IaRKLIv3T4qMto4P",
+        "c3hsdYfwhFc6b0ER3NvjxC",
+        "c9yYbHXIVATIzWDe4sEtCe",
+        "c9/V9evDxETLm6uBCH/xwS",
+        "caqS0X8N9GsZ7Rlva96Waa",
+        "ccVeGo0kRNn43/XOSKwDSB",
+        "d0UPFdJiRPs4k3J/RbirYn",
+        "d1GGd0pFlMb77E/g3qU3U0",
+        "d24RzqdhBM7Yubz8FoYcim",
+        "d57+UNnZBB7bR2OiAXyrxS",
+        "d6FO6W0g9Dc4BkXZL9WJAh",
+        "d6U/hgUphLq5aux5c2z7zu",
+        "d7y/9R0zdJuYJk/E2VTILe",
+        "d8rCP60tpNiIJPvV+VhEDQ",
+        "dbwWbiNPFKx72u511k+6qM",
+        "ddQrhrfBBEQJn9Btt63NYR",
+        "e3WrgR12ZKC55ovqNZaxla",
+        "e54Aml2LhK9adBd41siSZb",
+        "e6NZcOncZCrZGruICxNJHr",
+        "e6fheQMrRLWpC6k++Fer9e",
+        "e8u2WzfFVGoIznlFQ5XGQq",
+        "e824d1slBLGrTCj/bBIzTE",
+        "e9SfSA+39BmZL3pkh85wVt",
+        "ebKeo6ZydHyIqfs/oNGq23",
+        "ebvUJ2IFVJGbr/53rwdCD4",
+        "edwq+14ftIB5Gq6i8N4itv",
+        "efRnnwmn1DspYe0t58NR+q",
+        "f1Iq7W439OO4taHLKGhdY3",
+        "f2GfRW9nlCz72tvflD0hhA",
+        "f38Ie74kVGZYLI8yZq1A3J",
+        "f7ENmctQ1H1IRqgG1Hf6R/",
+        "f8Z9Vd2gNMooKPEzws3SO+",
+        "f9KY6KG2VDKZ4IsdwmNOAt",
+        "fayULU4z1OTbvJxV/tEal6",
+        "fewzMTFpZImZtn/eSOLnSt",
+        "00ZnSTISlBw76X1J8iF4Kg",
+        "000af9Wo5PM6ogkD1QCvYv",
+        "06y28U6jBLc4GMCRpCXBL3",
+        "07dwx7lKRPmpjDX6pPJ3zy",
+        "08e5GEda1OtJTsrIc19WhX",
+        "0962MQf4tDAanEswhN1bWt",
+        "0bhoicBA5AnZqSiiaZ2EE7",
+        "0cF2kZINJJwKiJm9Swk6aF",
+        "0cK66IPB9Du4MqbFJqCri8",
+        "11dB7PetVHfpnD+VF4nQyp",
+        "12VXBQbd5FCIMaNGUFXQpw",
+        "15QGt6KMpJ5LPn7AApAQZB",
+        "16tqL3hWhC7pPRME9YtETD",
+        "18G+jelxxL7YAmfeiE2v8j",
+        "18xaZBM2RBCr0IA9GRaCvf",
+        "188Lo1AeNHT4Gkv3mt6+Rw",
+        "1cybD3YUhC8IfolSSQNnZt",
+        "1ebBA7VxdM2YZC1crb/enG",
+        "21VCGE0GhHq4j0953dPApM",
+        "22qhMijxxG7ZkEoO+XoAwq",
+        "23OV+R4/9AeYACR4NiiI+z",
+        "24BBhlB3pFQ4Fso6Dz2cKp",
+        "27zlTnjPxIPrcKNJZvwe60",
+        "28k4ehVuVNRKHsrWDwK8MD",
+        "29bHUTdJREJJP6Z/LMWUYG",
+        "29qwduajlMSJHLbG5XC6zh",
+        "2d/cONFatGBrqwur86ZMAJ",
+        "30QfwBj/ZG2q3aaYE92AaX",
+        "32sxu+ZwpIJL5lzGq3PBT8",
+        "35vdWYGthCNYSeLveW/3ZV",
+        "358IADPSZIZrnCRphV+3Lt",
+        "3bSok/oPZE3LX5jxuO9N7l",
+        "3bfq75JyNIe4IiTckZrkXD",
+        "3dU08BdMRPrrdCTObXWBv+",
+        "3e25gKZ3dIbYQcU8oDHISx",
+        "40oldaoyFPLb8UmC39lwML",
+        "45lwDguEdFA5yCybJWGORg",
+        "48PR75fkREq4cEtQvczZjt",
+        "49hjDN2DBCKoYLu155W84T",
+        "49nm/mO8ZMyp9b77TH+O0N",
+        "4b7pt8W8FCt5JNLjwh76aS",
+        "4d7gGjjJlA9Yg87X3CMuBh",
+        "4f1Uh4HAtPIKzrAsBQNJXy",
+        "51/EmQyJ9HJZT5ocdOYYsL",
+        "52K+xuf+lImIXmXHz3fR57",
+        "54J9cfY3JLzqMgLvza3CFK",
+        "56DbMblpdPoKnw14+VfqVF",
+        "56HFoLMD5HD4taWgnSv3sS",
+        "57FINAOqhPG5IPP8rgy9Ws",
+        "58sas6qy1OxL698qJAkvFM",
+        "5aQLDcgFBIe5Pu9W5rt98H",
+        "5bi1tJhQlNDKVnhZ2Ysnwp",
+        "5cbjVqJtxDbZE6Wk3Wqpgp",
+        "5dsIlRqE1BbrfVO44yYFz8",
+        "65lGsJ+N9OTItPigFmoHKR",
+        "66mOULhf5Fwocpn1bIgm5d",
+        "68gMcUHi9IiKiwGlTaOpex",
+        "6ca+s6g6NAcahEI/8Tu0GJ",
+        "70+Xn83CREVJabJQTR+N+j",
+        "728ZiMmARPar/3vxqfMTkW",
+        "75ig96iExNj7iJj0Zdoj2x",
+        "77jh3i25pNkpWoi2yXTtKf",
+        "78gUhzcGJDv6QE7byZD6rj",
+        "796RcYGmVFLrU3cCyanfCC",
+        "7bMg1slbhFQZBZ/z72pNmQ",
+        "83wOCPtepP3IX1tEjiyo0Y",
+        "836PW6o0hB2r+Vv+s9I12A",
+        "84i0ktsFtDPolLHF1cW9sV",
+        "85hfaSU2dB9JdUx1u39TnO",
+        "86crh2jghLG7zAaYx4LlMX",
+        "8b4CU6Q3JAMZ2b2XOtoptG",
+        "90PQ0EsPVBUqooIMkxKVDT",
+        "91R16wbI5JJYFPcBIhMKdb",
+        "92fhT72CJOcpDoQs6DgIYD",
+        "952FCZ8HBMdZq4g8dpxAib",
+        "96bXB1t71OdaTaRHF+mrnK",
+        "97YIYcOpZCEL+wWMfDBVC9",
+        "99RR8Esk9EK6suhKYt4AVO",
+        "9d/n0j7ypGGbW+QpkrRZg1",
+        "a24ahWNyNDgL6MSH4G7W62",
+        "a3NQRiafZLZoaCIOsJVnsB",
+        "a3OWQXvxdMS4xe3VpaBUK1",
+        "a5kxGIo3dNWZQLIuYkQpvp",
+        "a5vOUfTABPSb4tPpExrmYn",
+        "a8Scgk7cFJcJnd1kPN7Xd8",
+        "acPe04qQ5PpZVZqqGnXL+I",
+        "adpdA/OfNFVLYQ9pLYUMOf",
+        "b2eiKwGFhFPrPwaQ6gX9XW",
+        "b5OFYbJ0tB/bvCqqKT6JTP",
+        "beLId6Vp1Bo4v5Es9ld1fk",
+        "bfhIfxpeNBWYtnDJ/Z+blY",
+        "c0Be04aj9DzKXEc7yjxb+M",
+        "c2A7PHz41KA5YcEucGZtWU",
+        "c4KCmXMQVDVJ1Zuqx0unNp",
+        "c6yUsNEFhLTLwhh0IastMT",
+        "cbbpzRfoJAB4HZPI8YjQjK",
+        "ceupCmw5tNq6f21999AYNR",
+        "cf/hTRcp1OAZ7F2qLEQKXE",
+        "d0zDDNGf5EqaL1F07WNvMO",
+        "d2HDJeusxCQrcOXH2lu8J/",
+        "d2OJIg7F9Mc6VnlhsuSv4P",
+        "d2sEU57IdOHZHNsrFDFWWg",
+        "d4ppSfD05JQ7kk9l8WxXgX",
+        "d4v7FfyKBJvpgfUEe/eTGr",
+        "d5rlrFhPBMM7785QMkYZmt",
+        "d6CI6BabdDGJ9gdjIIixX2",
+        "d6ktd2C1NC/4dyi/GW0hio",
+        "d7W11Rta1KI7h62ccmnI8Z",
+        "d8l1dNcFBLC5EntoOIq7iL",
+        "deynvwgpxB2oWLP8rArH2j",
+        "e0KPzU0KZBIY1rpaoBgE3A",
+        "e9Vo61v91JBKaYPZoGjVZp",
+        "e9jFPQ7flGWagqbc8QiOT6",
+        "eavmqWfLZGU7Jlm2JWM6D8",
+        "ecTp7fWBpAq4ON6JEwdgvp",
+        "ecscW5bNdIgLnUtdWXicY9",
+        "f09IxFwzxHD5G/S6mF1awy",
+        "f1Xy/cUGZAcbnrJ2ualj22",
+        "f3f1h19VlPFJo1I4rmpofF",
+        "f4hSQJd11KyocgboOaxL6U",
+        "f5daCMtzFGhrIMdUjH7V9Z",
+        "f8P9h+1BxLn7gm1PHK9Ks+",
+        "f8XjTmhOVB6Lu8uqZFsMQu",
+        "fbc05bJipOQ7bBkLX1d0jV",
+        "fdTXCxIBRBKbxXLzdA0+sP",
+        "feuCGkQoxL/aibZ7jhnjWr",
+        "02delMVqdBD70a/HSD99FK",
+        "31pm5945RNN53bYsYfGIyU",
+        "42C9Fcn0xMnL/4VjLA+f0P",
+        "4ao4OHfAZDBp5anbDOkKpn",
+        "77zDDQswZI47uyFC6PkUKu",
+        "7a/QZLET9IDreTiBfRn2PD",
+        "a2MjXRFdtLlYQ5ouAFv/+R",
+        "b2aHrECZ5APKGS/0d2hvT1",
+        "e40yIMO+NFaYwy8KQa6lub",
+        "ecpdLyjvZBwrvm+cedCcQy",
+        "f2KG2sFwJHj46rnw5QZxpS"
+    ],
+    "scenes": {},
+    "redirect": [
+        236,
+        0,
+        241,
+        0,
+        243,
+        1,
+        245,
+        0
+    ],
+    "deps": [
+        "internal",
+        "main"
+    ],
+    "packs": {
+        "05748e7e8": [
+            113,
+            115,
+            124,
+            237,
+            239,
+            240,
+            187,
+            198,
+            205,
+            208,
+            244,
+            246
+        ],
+        "08325fccf": [
+            110,
+            112,
+            117,
+            120,
+            140,
+            147,
+            149,
+            150,
+            155,
+            51,
+            191,
+            197,
+            203,
+            212,
+            214,
+            229,
+            233,
+            234
+        ],
+        "097d0ea79": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            125,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            128,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            141,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            172,
+            46,
+            47,
+            48,
+            49,
+            50,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            188,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            211,
+            83,
+            84,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109
+        ],
+        "0ca8d55a8": [
+            159,
+            165,
+            167
+        ]
+    },
+    "name": "game",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": false,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            111,
+            "6ff82",
+            "05748e7e8",
+            "5da70",
+            "08325fccf",
+            "b5514",
+            114,
+            "e8dc2",
+            "097d0ea79",
+            "cc5fd",
+            116,
+            "9985b",
+            118,
+            "7ef0a",
+            "0ca8d55a8",
+            "3e517",
+            119,
+            "54c2a",
+            121,
+            "f209e",
+            122,
+            "6e33a",
+            123,
+            "d99c6",
+            126,
+            "32c69",
+            127,
+            "e963d",
+            129,
+            "114bd",
+            130,
+            "14783",
+            131,
+            "db3f3",
+            132,
+            "d0fa7",
+            133,
+            "2f97a",
+            134,
+            "17282",
+            135,
+            "c7ad5",
+            136,
+            "da435",
+            137,
+            "90058",
+            138,
+            "95c40",
+            139,
+            "8edbd",
+            142,
+            "3d76e",
+            143,
+            "d866e",
+            144,
+            "b5e0c",
+            145,
+            "8fae3",
+            238,
+            "dc739",
+            146,
+            "e8848",
+            148,
+            "c3f8e",
+            151,
+            "28570",
+            152,
+            "2d612",
+            153,
+            "5d140",
+            154,
+            "71f1a",
+            156,
+            "18dc4",
+            157,
+            "0b29d",
+            158,
+            "4b909",
+            160,
+            "53325",
+            161,
+            "463e0",
+            162,
+            "c5e87",
+            163,
+            "e2bd9",
+            164,
+            "1d735",
+            166,
+            "19463",
+            168,
+            "3b03c",
+            169,
+            "bcb4e",
+            170,
+            "11947",
+            171,
+            "2fe80",
+            173,
+            "42b8e",
+            174,
+            "0c08e",
+            175,
+            "920c5",
+            176,
+            "4dbed",
+            177,
+            "a1540",
+            178,
+            "3eb5a",
+            179,
+            "07c0f",
+            180,
+            "77914",
+            181,
+            "1c6be",
+            182,
+            "cb408",
+            183,
+            "de9bf",
+            184,
+            "a0ddb",
+            185,
+            "4eb2b",
+            186,
+            "8dba1",
+            242,
+            "43d76",
+            189,
+            "75acd",
+            190,
+            "cfef4",
+            192,
+            "b42fc",
+            193,
+            "b3023",
+            194,
+            "63099",
+            195,
+            "c8ed8",
+            196,
+            "cea9f",
+            199,
+            "a1970",
+            200,
+            "97c6d",
+            201,
+            "eec4d",
+            202,
+            "613b7",
+            204,
+            "16e23",
+            206,
+            "7de2f",
+            207,
+            "77c7f",
+            209,
+            "8a710",
+            210,
+            "edd3d",
+            213,
+            "2c026",
+            215,
+            "3a9e6",
+            85,
+            "eebe9",
+            216,
+            "a2cd6",
+            217,
+            "5b653",
+            218,
+            "7c77b",
+            219,
+            "e4d29",
+            220,
+            "d53ab",
+            221,
+            "995fd",
+            222,
+            "fd483",
+            223,
+            "06c4c",
+            224,
+            "b7d2c",
+            225,
+            "6cb5f",
+            226,
+            "9e5c5",
+            227,
+            "f24dc",
+            228,
+            "3114d",
+            230,
+            "5daf4",
+            231,
+            "5e770",
+            232,
+            "707f3",
+            235,
+            "c2b1e"
+        ],
+        "native": [
+            0,
+            "bb22b",
+            1,
+            "u1b02",
+            2,
+            "230d9",
+            3,
+            "8fa2f",
+            4,
+            "f5540",
+            5,
+            "8d338",
+            6,
+            "cd47a",
+            7,
+            "ae798",
+            8,
+            "3d592",
+            9,
+            "bd600",
+            10,
+            "b5673",
+            11,
+            "b9076",
+            12,
+            "u1b05",
+            13,
+            "59ffd",
+            125,
+            "65a1b",
+            14,
+            "691b0",
+            15,
+            "e3b54",
+            16,
+            "e8057",
+            17,
+            "1191c",
+            18,
+            "2d076",
+            19,
+            "a71b0",
+            128,
+            "9ada8",
+            20,
+            "a00a6",
+            21,
+            "6064f",
+            22,
+            "0054e",
+            23,
+            "u1b03",
+            24,
+            "369b1",
+            25,
+            "ba658",
+            26,
+            "d2664",
+            27,
+            "59794",
+            28,
+            "28f63",
+            29,
+            "e7d5c",
+            30,
+            "62f6b",
+            31,
+            "ec0ec",
+            32,
+            "d797a",
+            141,
+            "492ee",
+            33,
+            "5eddf",
+            34,
+            "4100a",
+            35,
+            "b4fba",
+            36,
+            "a571b",
+            37,
+            "8d84c",
+            38,
+            "e1908",
+            39,
+            "d9baf",
+            40,
+            "418e7",
+            41,
+            "5d4e7",
+            42,
+            "69792",
+            43,
+            "193f2",
+            44,
+            "7b5a8",
+            45,
+            "b862d",
+            172,
+            "769de",
+            46,
+            "54665",
+            47,
+            "48b12",
+            48,
+            "0f6b8",
+            49,
+            "0be08",
+            50,
+            "7a081",
+            51,
+            "ddf1c",
+            52,
+            "93dc4",
+            53,
+            "880ca",
+            54,
+            "353ae",
+            55,
+            "0d786",
+            56,
+            "62ec7",
+            57,
+            "d1b5a",
+            58,
+            "7fcc6",
+            59,
+            "4ff62",
+            60,
+            "65e4e",
+            188,
+            "ad685",
+            61,
+            "8fdfc",
+            62,
+            "4f2da",
+            63,
+            "c3559",
+            64,
+            "b49ed",
+            65,
+            "00af1",
+            66,
+            "57415",
+            67,
+            "262b7",
+            68,
+            "0bcf7",
+            69,
+            "b62c1",
+            70,
+            "7e86b",
+            71,
+            "fa6cf",
+            72,
+            "06e83",
+            73,
+            "09872",
+            74,
+            "d8013",
+            75,
+            "u1b01",
+            76,
+            "5fa26",
+            77,
+            "ec7ac",
+            78,
+            "23247",
+            79,
+            "1fa72",
+            80,
+            "a7037",
+            81,
+            "2d69f",
+            82,
+            "dee4d",
+            211,
+            "46e5f",
+            83,
+            "63f96",
+            84,
+            "efc61",
+            85,
+            "ac70a",
+            86,
+            "97a2b",
+            87,
+            "cde5d",
+            88,
+            "eebbd",
+            89,
+            "3669c",
+            90,
+            "90c26",
+            91,
+            "c0e41",
+            92,
+            "u1b04",
+            93,
+            "13b38",
+            94,
+            "b43ad",
+            95,
+            "cf45f",
+            96,
+            "a1f3f",
+            97,
+            "ff593",
+            98,
+            "6cee3",
+            99,
+            "ad4aa",
+            100,
+            "445a6",
+            101,
+            "8e711",
+            102,
+            "6073d",
+            103,
+            "f35b6",
+            104,
+            "495b5",
+            105,
+            "ce80e",
+            106,
+            "97684",
+            107,
+            "e4707",
+            108,
+            "73357",
+            109,
+            "b07b5"
+        ]
+    }
+}

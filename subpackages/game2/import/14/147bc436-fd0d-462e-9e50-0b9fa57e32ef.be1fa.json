@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "ccbGLHMoROeKCPD4g/Se8Q"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "孔雀",
+            "rect": [
+                0,
+                0,
+                418,
+                367
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                418,
+                367
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "8eEnIGeOtK6LtLjvAoHobY"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_ph_jp3",
+            "rect": [
+                0,
+                0,
+                102,
+                134
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                102,
+                134
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

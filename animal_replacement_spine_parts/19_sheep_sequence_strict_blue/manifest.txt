@@ -1,0 +1,32 @@
+Sheep sequence strict blue recolor install
+
+Fix: recolored embedded 24-frame sheep PNG sequence used by restoreReplacementAnimalSprite.
+Preserved: transparent pixels, black outline, and pink hand/skin pixels.
+target=sheep-sequence-data.js
+backup=backups/sheep_sequence_strict_blue_20260611-113434
+frames=24
+
+frame_00: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_01: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_02: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_03: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_04: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_05: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_06: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_07: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_08: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_09: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_10: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_11: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_12: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_13: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_14: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_15: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_16: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_17: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_18: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_19: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_20: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_21: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_22: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}
+frame_23: before={"alpha":8688,"white":69,"light":5641,"blue":5509,"nearBlack":2029,"skin":0,"nonBlue":1150} after={"alpha":8688,"white":0,"light":5422,"blue":6659,"nearBlack":2029,"skin":0,"nonBlue":0}

@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "caEYInBjlM4KTLVh7OmuVu"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "鹦鹉",
+            "rect": [
+                0,
+                0,
+                321,
+                391
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                321,
+                391
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

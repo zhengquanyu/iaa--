@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "8ec/Ug3pxNmbAYXBgo7yN9"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_ph_tx_x",
+            "rect": [
+                5,
+                4,
+                65,
+                68
+            ],
+            "offset": [
+                0.5,
+                0.5
+            ],
+            "originalSize": [
+                74,
+                77
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

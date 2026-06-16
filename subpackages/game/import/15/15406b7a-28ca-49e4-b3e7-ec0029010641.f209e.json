@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "e3WrgR12ZKC55ovqNZaxla"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_nd_zi",
+            "rect": [
+                0,
+                0,
+                743,
+                212
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                743,
+                212
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "24zBg4WjhFiY8D6laZ91Sh"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "松鼠",
+            "rect": [
+                0,
+                0,
+                665,
+                719
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                665,
+                719
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

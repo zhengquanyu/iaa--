@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "d6YkNKKNRD1aGeScvGyf+8"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "企鹅",
+            "rect": [
+                0,
+                0,
+                333,
+                383
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                333,
+                383
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

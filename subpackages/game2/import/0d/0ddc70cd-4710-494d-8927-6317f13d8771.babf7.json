@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "7ca7CLl0JJ9pKz8FTyUjd8"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "螃蟹",
+            "rect": [
+                0,
+                0,
+                665,
+                719
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                665,
+                719
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

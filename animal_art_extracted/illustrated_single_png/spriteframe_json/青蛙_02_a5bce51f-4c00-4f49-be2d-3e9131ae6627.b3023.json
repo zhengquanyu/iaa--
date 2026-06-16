@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "80QyrMKJZPyI8HS5HcIiAP"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "青蛙",
+            "rect": [
+                0,
+                0,
+                152,
+                149
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                152,
+                149
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

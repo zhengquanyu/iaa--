@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "f7ENmctQ1H1IRqgG1Hf6R/"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_ty_btn_cha",
+            "rect": [
+                0,
+                0,
+                116,
+                119
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                116,
+                119
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

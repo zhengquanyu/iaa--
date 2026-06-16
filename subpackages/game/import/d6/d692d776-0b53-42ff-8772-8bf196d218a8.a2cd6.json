@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "efRnnwmn1DspYe0t58NR+q"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "羊驼",
+            "rect": [
+                0,
+                0,
+                123,
+                162
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                123,
+                162
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

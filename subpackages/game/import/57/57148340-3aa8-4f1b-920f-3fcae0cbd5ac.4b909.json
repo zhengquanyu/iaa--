@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "c3hsdYfwhFc6b0ER3NvjxC"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_ty_dk",
+            "rect": [
+                0,
+                0,
+                651,
+                302
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                651,
+                302
+            ],
+            "capInsets": [
+                326,
+                207,
+                319,
+                85
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

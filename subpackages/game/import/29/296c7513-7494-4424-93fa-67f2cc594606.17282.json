@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "94Zlggwk5GNpWRwnlpIi6R"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "白鸽",
+            "rect": [
+                0,
+                0,
+                135,
+                151
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                135,
+                151
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

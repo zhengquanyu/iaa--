@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "dbwWbiNPFKx72u511k+6qM"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "猫头鹰",
+            "rect": [
+                0,
+                0,
+                158,
+                168
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                158,
+                168
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

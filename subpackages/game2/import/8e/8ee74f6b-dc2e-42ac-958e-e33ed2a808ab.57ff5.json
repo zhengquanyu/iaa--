@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "17hhce49pBY6GadGsSByhy"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "斑马",
+            "rect": [
+                0,
+                0,
+                392,
+                379
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                392,
+                379
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "b7VqNS8pZM0LZCPZyGF//i"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "蛇",
+            "rect": [
+                0,
+                0,
+                150,
+                165
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                150,
+                165
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

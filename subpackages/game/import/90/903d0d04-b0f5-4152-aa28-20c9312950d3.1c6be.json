@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "ddQrhrfBBEQJn9Btt63NYR"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_sy_tuichu",
+            "rect": [
+                0,
+                1,
+                100,
+                98
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                100,
+                100
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

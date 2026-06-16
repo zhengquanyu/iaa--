@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "b7WLcCiKBK4ZcYEVdYgBlA"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "考拉",
+            "rect": [
+                0,
+                0,
+                168,
+                158
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                168,
+                158
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

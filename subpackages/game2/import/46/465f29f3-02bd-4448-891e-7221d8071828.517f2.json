@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "4bZ+rrX4dA5b0ErzBMSW3P"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_dj_fanzhuan",
+            "rect": [
+                0,
+                0,
+                246,
+                283
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                246,
+                283
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

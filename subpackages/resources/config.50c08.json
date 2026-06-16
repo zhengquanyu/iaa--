@@ -1,0 +1,74 @@
+{
+    "paths": {
+        "1": [
+            "prefab/adNode",
+            0
+        ],
+        "2": [
+            "prefab/notify",
+            0
+        ],
+        "3": [
+            "uiPrefab/loadPanel",
+            0
+        ]
+    },
+    "types": [
+        "cc.Prefab"
+    ],
+    "uuids": [
+        "1139de5b4",
+        "14MHSvrTlHkZwvc4rM7Gb/",
+        "57+ou/ttBMQqhAi2F6gWVE",
+        "6dRY34Z91DkaaCFDl9LjPU",
+        "84Zd+5akVLSrlci6QR3LDm",
+        "0ekKKIjHJBlbWS9YEwuuTc",
+        "c6mJ7FPTRNf57WcdDnL/9I",
+        "c92HnuQ2dFnLAuej5KPG6w",
+        "ecpdLyjvZBwrvm+cedCcQy"
+    ],
+    "scenes": {},
+    "redirect": [
+        8,
+        0
+    ],
+    "deps": [
+        "internal"
+    ],
+    "packs": {
+        "0262133ec": [
+            5,
+            3,
+            6,
+            7
+        ],
+        "05fd0d976": [
+            0,
+            4
+        ]
+    },
+    "name": "resources",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": false,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "0262133ec",
+            "f62cb",
+            "05fd0d976",
+            "884a9",
+            1,
+            "af01e",
+            2,
+            "ea525"
+        ],
+        "native": [
+            0,
+            "4de9a",
+            4,
+            "d34e1"
+        ]
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "paths": {},
+    "types": [],
+    "uuids": [
+        "159b86730",
+        "2dL3kvpAxJu6GJ7RdqJG5J",
+        "a3YNWyvAdNsZgmVF1OLgC+",
+        "b2aHrECZ5APKGS/0d2hvT1",
+        "d0qC05vt5GxLaYyB/w3t//",
+        "0ekKKIjHJBlbWS9YEwuuTc",
+        "47LfXTNedBhJ5sf0G+5l7j",
+        "4ewA6/CDND/6sejcZ4oo1M",
+        "ecpdLyjvZBwrvm+cedCcQy"
+    ],
+    "scenes": {
+        "db://assets/Scene/Main.fire": 1
+    },
+    "redirect": [
+        5,
+        0,
+        8,
+        1
+    ],
+    "deps": [
+        "resources",
+        "internal"
+    ],
+    "packs": {
+        "0377598e5": [
+            0,
+            4
+        ],
+        "0b8c63e02": [
+            1,
+            6,
+            7,
+            2,
+            3
+        ]
+    },
+    "name": "main",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": false,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "0377598e5",
+            "0178f",
+            "0b8c63e02",
+            "c6a58"
+        ],
+        "native": [
+            0,
+            "ec6f3",
+            2,
+            "b0722",
+            3,
+            "2bf0b",
+            4,
+            "841f5"
+        ]
+    }
+}

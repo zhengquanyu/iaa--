@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "1cykmW58lNl6EsRLDHZJ8A"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_yx_ka",
+            "rect": [
+                1,
+                0,
+                115,
+                117
+            ],
+            "offset": [
+                0.5,
+                0
+            ],
+            "originalSize": [
+                116,
+                117
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "46MaB9uV1J/bJmKBsTDMzP"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "狗",
+            "rect": [
+                0,
+                0,
+                338,
+                387
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                338,
+                387
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

@@ -1,0 +1,1345 @@
+{
+  "createdAt": "2026-06-10T02:50:54.302Z",
+  "sourceRoot": "C:\\Users\\admin\\Desktop\\KillWxapkgGame",
+  "output": "C:\\Users\\admin\\Desktop\\KillWxapkgGame\\animal_art_extracted",
+  "levelSpine": {
+    "description": "?????????? Spine ???????????????????",
+    "regionsExtracted": 98,
+    "animalsInAtlas": [
+      "cat",
+      "cattle",
+      "dog",
+      "fox",
+      "kabl",
+      "mouse",
+      "pig",
+      "rabbit",
+      "sheep",
+      "yun",
+      "yy"
+    ]
+  },
+  "illustratedSinglePng": {
+    "description": "??/????????? SpriteFrame ???????????????? animal????? animalGray?",
+    "copiedCount": 59,
+    "uniqueAnimals": [
+      "白鸽",
+      "白狗",
+      "斑马",
+      "大象",
+      "袋鼠",
+      "鳄鱼",
+      "狗",
+      "河马",
+      "猴子",
+      "蝴蝶",
+      "火烈鸟",
+      "鸡",
+      "考拉",
+      "孔雀",
+      "老鼠",
+      "蚂蚁",
+      "猫",
+      "猫头鹰",
+      "蜜蜂",
+      "螃蟹",
+      "企鹅",
+      "青蛙",
+      "蛇",
+      "松鼠",
+      "兔子",
+      "乌龟",
+      "熊猫",
+      "羊",
+      "羊驼",
+      "鹦鹉"
+    ],
+    "items": [
+      {
+        "name": "白鸽",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          135,
+          151
+        ],
+        "textureUuid": "94665820-c24e-4636-9591-c27969222e91",
+        "spriteframe": "subpackages\\game\\import\\29\\296c7513-7494-4424-93fa-67f2cc594606.17282.json",
+        "native": "subpackages\\game\\native\\94\\94665820-c24e-4636-9591-c27969222e91.7fcc6.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\白鸽_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\白鸽_01_296c7513-7494-4424-93fa-67f2cc594606.17282.json"
+      },
+      {
+        "name": "白鸽",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          135,
+          151
+        ],
+        "textureUuid": "afb683ab-880e-41c0-b9f0-3cd80053863b",
+        "spriteframe": "subpackages\\game\\import\\52\\522bec6e-7fe9-4898-85e6-5c7cf77d1e7b.71f1a.json",
+        "native": "subpackages\\game\\native\\af\\afb683ab-880e-41c0-b9f0-3cd80053863b.262b7.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\白鸽_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\白鸽_02_522bec6e-7fe9-4898-85e6-5c7cf77d1e7b.71f1a.json"
+      },
+      {
+        "name": "白狗",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          141,
+          139
+        ],
+        "textureUuid": "f867d55d-da03-4ca2-828f-133c2cdd23be",
+        "spriteframe": "subpackages\\game\\import\\4f\\4fd54878-1c0b-4f20-aceb-02c0503495f2.2d612.json",
+        "native": "subpackages\\game\\native\\f8\\f867d55d-da03-4ca2-828f-133c2cdd23be.97684.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\白狗_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\白狗_01_4fd54878-1c0b-4f20-aceb-02c0503495f2.2d612.json"
+      },
+      {
+        "name": "白狗",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          141,
+          139
+        ],
+        "textureUuid": "86026946-9ba9-42fd-b567-0cad0e085fa8",
+        "spriteframe": "subpackages\\game\\import\\ac\\ac3ded38-a90e-4fa5-9559-aaa1a75cbf88.c8ed8.json",
+        "native": "subpackages\\game\\native\\86\\86026946-9ba9-42fd-b567-0cad0e085fa8.353ae.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\白狗_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\白狗_02_ac3ded38-a90e-4fa5-9559-aaa1a75cbf88.c8ed8.json"
+      },
+      {
+        "name": "斑马",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          165,
+          159
+        ],
+        "textureUuid": "3a92d816-2bbf-4e1c-acaa-3efd5a9aae0f",
+        "spriteframe": "subpackages\\game\\import\\35\\35bdd598-1ad8-4235-849e-2ef796ff7655.8edbd.json",
+        "native": "subpackages\\game\\native\\3a\\3a92d816-2bbf-4e1c-acaa-3efd5a9aae0f.d797a.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\斑马_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\斑马_01_35bdd598-1ad8-4235-849e-2ef796ff7655.8edbd.json"
+      },
+      {
+        "name": "斑马",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          165,
+          159
+        ],
+        "textureUuid": "845640c3-86d7-461f-ad24-3d7e1044aac0",
+        "spriteframe": "subpackages\\game\\import\\83\\83c0e08f-b5ea-4fdc-85f5-b448e2ca8d18.920c5.json",
+        "native": "subpackages\\game\\native\\84\\845640c3-86d7-461f-ad24-3d7e1044aac0.93dc4.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\斑马_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\斑马_02_83c0e08f-b5ea-4fdc-85f5-b448e2ca8d18.920c5.json"
+      },
+      {
+        "name": "大象",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          183,
+          166
+        ],
+        "textureUuid": "eb29ea3a-6727-47c8-8a9f-b3fa0d1aadb7",
+        "spriteframe": "subpackages\\game\\import\\79\\79e91718-1a65-452e-b537-702c9a9df082.42b8e.json",
+        "native": "subpackages\\game\\native\\eb\\eb29ea3a-6727-47c8-8a9f-b3fa0d1aadb7.6cee3.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\大象_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\大象_01_79e91718-1a65-452e-b537-702c9a9df082.42b8e.json"
+      },
+      {
+        "name": "大象",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          183,
+          166
+        ],
+        "textureUuid": "caa92d17-f0df-46b1-9ed1-96f6bde9669a",
+        "spriteframe": "subpackages\\game\\import\\91\\91475eb0-6c8e-4925-814f-70122130a75b.cb408.json",
+        "native": "subpackages\\game\\native\\ca\\caa92d17-f0df-46b1-9ed1-96f6bde9669a.1fa72.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\大象_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\大象_02_91475eb0-6c8e-4925-814f-70122130a75b.cb408.json"
+      },
+      {
+        "name": "袋鼠",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          132,
+          162
+        ],
+        "textureUuid": "96830c9f-09a3-45c3-835d-0ef4f88b335e",
+        "spriteframe": "subpackages\\game\\import\\5c\\5c6e356a-26dc-436d-913a-5a4dd6aa9829.c5e87.json",
+        "native": "subpackages\\game\\native\\96\\96830c9f-09a3-45c3-835d-0ef4f88b335e.4ff62.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\袋鼠_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\袋鼠_01_5c6e356a-26dc-436d-913a-5a4dd6aa9829.c5e87.json"
+      },
+      {
+        "name": "袋鼠",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          132,
+          162
+        ],
+        "textureUuid": "e8bb65b3-7c55-46a0-8ce7-9454395c642a",
+        "spriteframe": "subpackages\\game\\import\\f5\\f575a08c-b731-4686-b20c-7548c7ed5f59.5daf4.json",
+        "native": "subpackages\\game\\native\\e8\\e8bb65b3-7c55-46a0-8ce7-9454395c642a.cf45f.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\袋鼠_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\袋鼠_02_f575a08c-b731-4686-b20c-7548c7ed5f59.5daf4.json"
+      },
+      {
+        "name": "鳄鱼",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          183,
+          179
+        ],
+        "textureUuid": "b4b2c613-1377-4c16-96f0-703497cd55c4",
+        "spriteframe": "subpackages\\game\\import\\40\\40a2575a-a321-4f2d-bf14-982dfd97030b.8fae3.json",
+        "native": "subpackages\\game\\native\\b4\\b4b2c613-1377-4c16-96f0-703497cd55c4.7e86b.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\鳄鱼_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\鳄鱼_01_40a2575a-a321-4f2d-bf14-982dfd97030b.8fae3.json"
+      },
+      {
+        "name": "鳄鱼",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          183,
+          179
+        ],
+        "textureUuid": "31c61747-50f5-4b2c-8aa5-0dd074a5c075",
+        "spriteframe": "subpackages\\game\\import\\a3\\a3350462-69f6-4b66-8682-20eb09567b01.cfef4.json",
+        "native": "subpackages\\game\\native\\31\\31c61747-50f5-4b2c-8aa5-0dd074a5c075.d2664.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\鳄鱼_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\鳄鱼_02_a3350462-69f6-4b66-8682-20eb09567b01.cfef4.json"
+      },
+      {
+        "name": "狗",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          142,
+          163
+        ],
+        "textureUuid": "64c6a078-3133-4988-bbe9-2200c3ee6a8b",
+        "spriteframe": "subpackages\\game\\import\\5a\\5a40b0dc-8050-487b-93ee-f56e6bb7df07.53325.json",
+        "native": "subpackages\\game\\native\\64\\64c6a078-3133-4988-bbe9-2200c3ee6a8b.193f2.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\狗_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\狗_01_5a40b0dc-8050-487b-93ee-f56e6bb7df07.53325.json"
+      },
+      {
+        "name": "狗",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          142,
+          163
+        ],
+        "textureUuid": "f122aed6-e37f-4e3b-8b5a-1cb28685d637",
+        "spriteframe": "subpackages\\game\\import\\ec\\ec4e9edf-581a-40ab-838d-e89130760be9.b7d2c.json",
+        "native": "subpackages\\game\\native\\f1\\f122aed6-e37f-4e3b-8b5a-1cb28685d637.6073d.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\狗_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\狗_02_ec4e9edf-581a-40ab-838d-e89130760be9.b7d2c.json"
+      },
+      {
+        "name": "河马",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          200,
+          156
+        ],
+        "textureUuid": "36e06836-7011-4902-9b6a-0659dc78d141",
+        "spriteframe": "subpackages\\game\\import\\00\\00d1a7fd-5a8e-4f33-aa20-903d500af62f.6ff82.json",
+        "native": "subpackages\\game\\native\\36\\36e06836-7011-4902-9b6a-0659dc78d141.62f6b.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\河马_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\河马_01_00d1a7fd-5a8e-4f33-aa20-903d500af62f.6ff82.json"
+      },
+      {
+        "name": "河马",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          200,
+          156
+        ],
+        "textureUuid": "b1addb8a-3678-487c-bd8a-fc808bae8827",
+        "spriteframe": "subpackages\\game\\import\\85\\8585f692-5367-41f4-9754-c75bb7f539ce.3eb5a.json",
+        "native": "subpackages\\game\\native\\b1\\b1addb8a-3678-487c-bd8a-fc808bae8827.0bcf7.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\河马_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\河马_02_8585f692-5367-41f4-9754-c75bb7f539ce.3eb5a.json"
+      },
+      {
+        "name": "猴子",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          130,
+          163
+        ],
+        "textureUuid": "edc2afb5-e1fb-4807-91aa-ea2f0de22b6f",
+        "spriteframe": "subpackages\\game\\import\\56\\561c5a0b-303e-470f-8b5a-5a09d2bf7b12.0b29d.json",
+        "native": "subpackages\\game\\native\\ed\\edc2afb5-e1fb-4807-91aa-ea2f0de22b6f.445a6.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\猴子_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\猴子_01_561c5a0b-303e-470f-8b5a-5a09d2bf7b12.0b29d.json"
+      },
+      {
+        "name": "猴子",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          130,
+          163
+        ],
+        "textureUuid": "bca993fe-5f11-420f-91c3-8ce1e5a1f705",
+        "spriteframe": "subpackages\\game\\import\\ec\\ecb1c5b9-6cd7-4880-b9d4-b5d59789c63d.6cb5f.json",
+        "native": "subpackages\\game\\native\\bc\\bca993fe-5f11-420f-91c3-8ce1e5a1f705.09872.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\猴子_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\猴子_02_ecb1c5b9-6cd7-4880-b9d4-b5d59789c63d.6cb5f.json"
+      },
+      {
+        "name": "蝴蝶",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          144,
+          119
+        ],
+        "textureUuid": "01eaa09c-b0a3-4087-9a2d-d04524db823c",
+        "spriteframe": "subpackages\\game\\import\\77\\778e1de2-db9a-4d92-95a8-8b6c974ed29f.2fe80.json",
+        "native": "subpackages\\game\\native\\01\\01eaa09c-b0a3-4087-9a2d-d04524db823c.bb22b.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\蝴蝶_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\蝴蝶_01_778e1de2-db9a-4d92-95a8-8b6c974ed29f.2fe80.json"
+      },
+      {
+        "name": "蝴蝶",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          144,
+          119
+        ],
+        "textureUuid": "2a7dcc90-f2d5-4ee5-bc4e-9f60a0b730b4",
+        "spriteframe": "subpackages\\game\\import\\ad\\ada5d03f-39f3-4554-b610-f692d850c39f.cea9f.json",
+        "native": "subpackages\\game\\native\\2a\\2a7dcc90-f2d5-4ee5-bc4e-9f60a0b730b4.369b1.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\蝴蝶_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\蝴蝶_02_ada5d03f-39f3-4554-b610-f692d850c39f.cea9f.json"
+      },
+      {
+        "name": "火烈鸟",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          96,
+          154
+        ],
+        "textureUuid": "285dcd36-dca1-498d-9f02-dffcbaad6dc9",
+        "spriteframe": "subpackages\\game\\import\\5b\\5b8b5b49-8509-4d0c-a567-859d98b27c29.463e0.json",
+        "native": "subpackages\\game\\native\\28\\285dcd36-dca1-498d-9f02-dffcbaad6dc9.0054e.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\火烈鸟_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\火烈鸟_01_5b8b5b49-8509-4d0c-a567-859d98b27c29.463e0.json"
+      },
+      {
+        "name": "火烈鸟",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          96,
+          154
+        ],
+        "textureUuid": "d7cbff51-d337-49b9-8264-fc4d954c82de",
+        "spriteframe": "subpackages\\game\\import\\a5\\a5931188-a377-4d59-940b-22e624429be9.b42fc.json",
+        "native": "subpackages\\game\\native\\d7\\d7cbff51-d337-49b9-8264-fc4d954c82de.cde5d.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\火烈鸟_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\火烈鸟_02_a5931188-a377-4d59-940b-22e624429be9.b42fc.json"
+      },
+      {
+        "name": "鸡",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          161,
+          174
+        ],
+        "textureUuid": "d2e11cea-7610-4ced-8b9b-cfc16861c8a6",
+        "spriteframe": "subpackages\\game\\import\\d7\\d75b5d51-b5ad-4a23-b87a-d9c7269c8f19.5b653.json",
+        "native": "subpackages\\game\\native\\d2\\d2e11cea-7610-4ced-8b9b-cfc16861c8a6.63f96.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\鸡_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\鸡_01_d75b5d51-b5ad-4a23-b87a-d9c7269c8f19.5b653.json"
+      },
+      {
+        "name": "鸡",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          161,
+          174
+        ],
+        "textureUuid": "fec33313-1696-4899-9b67-fde48e2e74ad",
+        "spriteframe": "subpackages\\game\\import\\f1\\f15f2fdc-5066-4071-b9eb-276b9a963db6.f24dc.json",
+        "native": "subpackages\\game\\native\\fe\\fec33313-1696-4899-9b67-fde48e2e74ad.b07b5.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\鸡_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\鸡_02_f15f2fdc-5066-4071-b9eb-276b9a963db6.f24dc.json"
+      },
+      {
+        "name": "考拉",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          168,
+          158
+        ],
+        "textureUuid": "0ef42332-3c20-4f4d-ac56-810da9994a2b",
+        "spriteframe": "subpackages\\game\\import\\51\\51fc4990-c89f-4725-94f9-a1c74e618b0b.5d140.json",
+        "native": "subpackages\\game\\native\\0e\\0ef42332-3c20-4f4d-ac56-810da9994a2b.3d592.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\考拉_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\考拉_01_51fc4990-c89f-4725-94f9-a1c74e618b0b.5d140.json"
+      },
+      {
+        "name": "考拉",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          168,
+          158
+        ],
+        "textureUuid": "b758b702-88a0-4ae1-9718-115758801940",
+        "spriteframe": "subpackages\\game\\import\\f3\\f37f5875-f559-4f14-9a35-238ae6a687c5.3114d.json",
+        "native": "subpackages\\game\\native\\b7\\b758b702-88a0-4ae1-9718-115758801940.06e83.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\考拉_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\考拉_02_f37f5875-f559-4f14-9a35-238ae6a687c5.3114d.json"
+      },
+      {
+        "name": "孔雀",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          176,
+          154
+        ],
+        "textureUuid": "9c521baf-dc34-4800-bf8a-33bd6037fb05",
+        "spriteframe": "subpackages\\game\\import\\28\\289387a1-56e5-4d44-a1ec-ad60f02bc303.2f97a.json",
+        "native": "subpackages\\game\\native\\9c\\9c521baf-dc34-4800-bf8a-33bd6037fb05.65e4e.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\孔雀_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\孔雀_01_289387a1-56e5-4d44-a1ec-ad60f02bc303.2f97a.json"
+      },
+      {
+        "name": "孔雀",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          176,
+          154
+        ],
+        "textureUuid": "7d2aead0-fa5f-4fdd-910c-3c26776b8ac1",
+        "spriteframe": "subpackages\\game\\import\\ce\\ceba90a6-c39b-4dab-a7f6-d7df7d018351.7de2f.json",
+        "native": "subpackages\\game\\native\\7d\\7d2aead0-fa5f-4fdd-910c-3c26776b8ac1.0f6b8.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\孔雀_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\孔雀_02_ceba90a6-c39b-4dab-a7f6-d7df7d018351.7de2f.json"
+      },
+      {
+        "name": "老鼠",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          124,
+          118
+        ],
+        "textureUuid": "8204d316-b86e-43b9-99fa-d2b5e53c583d",
+        "spriteframe": "subpackages\\game\\import\\30\\3041fc01-8ff6-46da-adda-69813dd80697.90058.json",
+        "native": "subpackages\\game\\native\\82\\8204d316-b86e-43b9-99fa-d2b5e53c583d.7a081.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\老鼠_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\老鼠_01_3041fc01-8ff6-46da-adda-69813dd80697.90058.json"
+      },
+      {
+        "name": "老鼠",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          124,
+          118
+        ],
+        "textureUuid": "d050f15d-2624-4fb3-8937-27f45b8ab627",
+        "spriteframe": "subpackages\\game\\import\\49\\498630cd-d830-422a-860b-bb5e795bce13.c3f8e.json",
+        "native": "subpackages\\game\\native\\d0\\d050f15d-2624-4fb3-8937-27f45b8ab627.2d69f.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\老鼠_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\老鼠_02_498630cd-d830-422a-860b-bb5e795bce13.c3f8e.json"
+      },
+      {
+        "name": "蚂蚁",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          113,
+          187
+        ],
+        "textureUuid": "12d2143d-5e44-446c-9dbe-6c6f72cb038e",
+        "spriteframe": "subpackages\\game\\import\\0b\\0b86889c-040e-409d-9a92-8a2699d8413b.9985b.json",
+        "native": "subpackages\\game\\native\\12\\12d2143d-5e44-446c-9dbe-6c6f72cb038e.b9076.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\蚂蚁_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\蚂蚁_01_0b86889c-040e-409d-9a92-8a2699d8413b.9985b.json"
+      },
+      {
+        "name": "蚂蚁",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          113,
+          187
+        ],
+        "textureUuid": "44111845-2ce6-4d63-896e-2cbdda4e3585",
+        "spriteframe": "subpackages\\game\\import\\de\\deca7bf0-829c-41da-858b-3fcac0ac7da3.e4d29.json",
+        "native": "subpackages\\game\\native\\44\\44111845-2ce6-4d63-896e-2cbdda4e3585.8d84c.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\蚂蚁_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\蚂蚁_02_deca7bf0-829c-41da-858b-3fcac0ac7da3.e4d29.json"
+      },
+      {
+        "name": "猫",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          129,
+          151
+        ],
+        "textureUuid": "19c6a174-21d6-491f-9171-7ff030ff2ffb",
+        "spriteframe": "subpackages\\game\\import\\75\\758a0f7a-884c-4d8f-b889-8f465da23db1.11947.json",
+        "native": "subpackages\\game\\native\\19\\19c6a174-21d6-491f-9171-7ff030ff2ffb.691b0.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\猫_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\猫_01_758a0f7a-884c-4d8f-b889-8f465da23db1.11947.json"
+      },
+      {
+        "name": "猫",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          129,
+          151
+        ],
+        "textureUuid": "1520e475-4a30-427b-9dd7-0b2a16f3ed94",
+        "spriteframe": "subpackages\\game\\import\\fe\\feb821a4-428c-4bfd-a89b-67b8e19e35ab.c2b1e.json",
+        "native": "subpackages\\game\\native\\15\\1520e475-4a30-427b-9dd7-0b2a16f3ed94.59ffd.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\猫_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\猫_02_feb821a4-428c-4bfd-a89b-67b8e19e35ab.c2b1e.json"
+      },
+      {
+        "name": "猫头鹰",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          158,
+          168
+        ],
+        "textureUuid": "dbc166e2-34f1-4ac7-bdae-e75d64fbaa8c",
+        "spriteframe": "subpackages\\game\\import\\24\\24041865-077a-4543-816c-a3a0f3d9c2a9.db3f3.json",
+        "native": "subpackages\\game\\native\\db\\dbc166e2-34f1-4ac7-bdae-e75d64fbaa8c.3669c.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\猫头鹰_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\猫头鹰_01_24041865-077a-4543-816c-a3a0f3d9c2a9.db3f3.json"
+      },
+      {
+        "name": "猫头鹰",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          158,
+          168
+        ],
+        "textureUuid": "22f915bd-c0d5-4c08-bd5b-181faebe1268",
+        "spriteframe": "subpackages\\game\\import\\3b\\3b7eaef9-2723-487b-8222-4dc919ae45c3.3d76e.json",
+        "native": "subpackages\\game\\native\\22\\22f915bd-c0d5-4c08-bd5b-181faebe1268.a00a6.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\猫头鹰_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\猫头鹰_02_3b7eaef9-2723-487b-8222-4dc919ae45c3.3d76e.json"
+      },
+      {
+        "name": "蜜蜂",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          146,
+          106
+        ],
+        "textureUuid": "d1186774-a459-4c6f-bec4-fe0dea537534",
+        "spriteframe": "subpackages\\game\\import\\96\\966d7075-b7bd-4e75-a4da-44717e9ab9ca.4eb2b.json",
+        "native": "subpackages\\game\\native\\d1\\d1186774-a459-4c6f-bec4-fe0dea537534.dee4d.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\蜜蜂_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\蜜蜂_01_966d7075-b7bd-4e75-a4da-44717e9ab9ca.4eb2b.json"
+      },
+      {
+        "name": "蜜蜂",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          146,
+          106
+        ],
+        "textureUuid": "f219f456-f679-42cf-bdad-bdf943d21840",
+        "spriteframe": "subpackages\\game\\import\\cf\\cffe14d1-729d-4e01-9ec5-daa2c440a5c4.77c7f.json",
+        "native": "subpackages\\game\\native\\f2\\f219f456-f679-42cf-bdad-bdf943d21840.f35b6.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\蜜蜂_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\蜜蜂_02_cffe14d1-729d-4e01-9ec5-daa2c440a5c4.77c7f.json"
+      },
+      {
+        "name": "螃蟹",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          152,
+          115
+        ],
+        "textureUuid": "07a4c43c-5075-4532-b084-d4e0b32735fa",
+        "spriteframe": "subpackages\\game\\import\\0c\\0c2bae88-3c1f-43bb-832a-6c526a0ab8bc.7ef0a.json",
+        "native": "subpackages\\game\\native\\07\\07a4c43c-5075-4532-b084-d4e0b32735fa.f5540.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\螃蟹_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\螃蟹_01_0c2bae88-3c1f-43bb-832a-6c526a0ab8bc.7ef0a.json"
+      },
+      {
+        "name": "螃蟹",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          152,
+          115
+        ],
+        "textureUuid": "bfcac7d5-4d80-45d1-969c-f549e9322008",
+        "spriteframe": "subpackages\\game\\import\\22\\22aa1322-8f1c-46ed-9904-a0ef97a00c2a.114bd.json",
+        "native": "subpackages\\game\\native\\bf\\bfcac7d5-4d80-45d1-969c-f549e9322008.d8013.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\螃蟹_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\螃蟹_02_22aa1322-8f1c-46ed-9904-a0ef97a00c2a.114bd.json"
+      },
+      {
+        "name": "企鹅",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          140,
+          161
+        ],
+        "textureUuid": "8768a3ba-755e-4acd-9e9b-033b283094d9",
+        "spriteframe": "subpackages\\game\\import\\3d\\3d534f01-74c4-4fae-b742-4ce6d7581bfe.d866e.json",
+        "native": "subpackages\\game\\native\\87\\8768a3ba-755e-4acd-9e9b-033b283094d9.0d786.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\企鹅_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\企鹅_01_3d534f01-74c4-4fae-b742-4ce6d7581bfe.d866e.json"
+      },
+      {
+        "name": "企鹅",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          140,
+          161
+        ],
+        "textureUuid": "2b470fb3-d75f-4e30-88a7-67ac09e3789f",
+        "spriteframe": "subpackages\\game\\import\\c0\\c005ed38-6a3f-43cc-a5c4-73bca3c5bf8c.eec4d.json",
+        "native": "subpackages\\game\\native\\2b\\2b470fb3-d75f-4e30-88a7-67ac09e3789f.ba658.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\企鹅_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\企鹅_02_c005ed38-6a3f-43cc-a5c4-73bca3c5bf8c.eec4d.json"
+      },
+      {
+        "name": "青蛙",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          152,
+          149
+        ],
+        "textureUuid": "358862bd-4067-4d3f-8be9-c8ae26d4579a",
+        "spriteframe": "subpackages\\game\\import\\68\\6880c714-1e2f-4888-a8b0-1a54da3a97b1.19463.json",
+        "native": "subpackages\\game\\native\\35\\358862bd-4067-4d3f-8be9-c8ae26d4579a.28f63.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\青蛙_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\青蛙_01_6880c714-1e2f-4888-a8b0-1a54da3a97b1.19463.json"
+      },
+      {
+        "name": "青蛙",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          152,
+          149
+        ],
+        "textureUuid": "80432acc-2896-4fc8-8f07-4b91dc22200f",
+        "spriteframe": "subpackages\\game\\import\\a5\\a5bce51f-4c00-4f49-be2d-3e9131ae6627.b3023.json",
+        "native": "subpackages\\game\\native\\80\\80432acc-2896-4fc8-8f07-4b91dc22200f.0be08.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\青蛙_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\青蛙_02_a5bce51f-4c00-4f49-be2d-3e9131ae6627.b3023.json"
+      },
+      {
+        "name": "蛇",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          150,
+          165
+        ],
+        "textureUuid": "3658d6f9-0e05-4ddb-8c74-826a92ce6fe5",
+        "spriteframe": "subpackages\\game\\import\\2d\\2dfdc38d-15ab-4606-bab0-babf3a64c009.da435.json",
+        "native": "subpackages\\game\\native\\36\\3658d6f9-0e05-4ddb-8c74-826a92ce6fe5.e7d5c.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\蛇_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\蛇_01_2dfdc38d-15ab-4606-bab0-babf3a64c009.da435.json"
+      },
+      {
+        "name": "蛇",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          150,
+          165
+        ],
+        "textureUuid": "b756a352-f296-4cd0-b642-3d9c8617ffe2",
+        "spriteframe": "subpackages\\game\\import\\c6\\c6c94b0d-1058-4b4c-bc21-87421ab2d313.16e23.json",
+        "native": "subpackages\\game\\native\\b7\\b756a352-f296-4cd0-b642-3d9c8617ffe2.fa6cf.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\蛇_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\蛇_02_c6c94b0d-1058-4b4c-bc21-87421ab2d313.16e23.json"
+      },
+      {
+        "name": "松鼠",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          176,
+          161
+        ],
+        "textureUuid": "0d5c3297-3685-4947-93e2-df06473799dc",
+        "spriteframe": "subpackages\\game\\import\\1e\\1e6c103b-5717-4cd9-8642-d5cadbfde9c6.e963d.json",
+        "native": "subpackages\\game\\native\\0d\\0d5c3297-3685-4947-93e2-df06473799dc.ae798.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\松鼠_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\松鼠_01_1e6c103b-5717-4cd9-8642-d5cadbfde9c6.e963d.json"
+      },
+      {
+        "name": "松鼠",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          176,
+          161
+        ],
+        "textureUuid": "512f7186-3f89-43d8-9b10-762c15b74d14",
+        "spriteframe": "subpackages\\game\\import\\70\\70f979fc-dc24-4454-969b-2504d1f8dfa3.3b03c.json",
+        "native": "subpackages\\game\\native\\51\\512f7186-3f89-43d8-9b10-762c15b74d14.d9baf.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\松鼠_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\松鼠_02_70f979fc-dc24-4454-969b-2504d1f8dfa3.3b03c.json"
+      },
+      {
+        "name": "兔子",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          109,
+          155
+        ],
+        "textureUuid": "c9fd5f5e-bc3c-444c-b9ba-b81087ff1c12",
+        "spriteframe": "subpackages\\game\\import\\29\\29ab076e-6a39-4c48-91cb-6c6e570bace1.c7ad5.json",
+        "native": "subpackages\\game\\native\\c9\\c9fd5f5e-bc3c-444c-b9ba-b81087ff1c12.23247.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\兔子_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\兔子_01_29ab076e-6a39-4c48-91cb-6c6e570bace1.c7ad5.json"
+      },
+      {
+        "name": "兔子",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          109,
+          155
+        ],
+        "textureUuid": "9fe8c1c9-835c-4b85-b9c5-973e3d5b3358",
+        "spriteframe": "subpackages\\game\\import\\d8\\d897574d-7050-4b0b-9127-b68388abb88b.7c77b.json",
+        "native": "subpackages\\game\\native\\9f\\9fe8c1c9-835c-4b85-b9c5-973e3d5b3358.8fdfc.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\兔子_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\兔子_02_d897574d-7050-4b0b-9127-b68388abb88b.7c77b.json"
+      },
+      {
+        "name": "乌龟",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          183,
+          119
+        ],
+        "textureUuid": "d653f860-5298-4bab-96ae-c79736cfbcee",
+        "spriteframe": "subpackages\\game\\import\\ea\\eabe6a96-7cb6-4653-b265-9b625633a0fc.06c4c.json",
+        "native": "subpackages\\game\\native\\d6\\d653f860-5298-4bab-96ae-c79736cfbcee.97a2b.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\乌龟_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\乌龟_01_eabe6a96-7cb6-4653-b265-9b625633a0fc.06c4c.json"
+      },
+      {
+        "name": "熊猫",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          134,
+          178
+        ],
+        "textureUuid": "e949f480-fb7f-4199-92f7-a6487ce7056d",
+        "spriteframe": "subpackages\\game\\import\\3e\\3edb980a-6777-486d-841c-53ca031c84b1.b5e0c.json",
+        "native": "subpackages\\game\\native\\e9\\e949f480-fb7f-4199-92f7-a6487ce7056d.ff593.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\熊猫_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\熊猫_01_3edb980a-6777-486d-841c-53ca031c84b1.b5e0c.json"
+      },
+      {
+        "name": "熊猫",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          134,
+          178
+        ],
+        "textureUuid": "e67e1790-32b4-4b5a-90ba-93ef857abf5e",
+        "spriteframe": "subpackages\\game\\import\\5d\\5db08951-a84d-416e-b7d5-3b8e32605cfc.e2bd9.json",
+        "native": "subpackages\\game\\native\\e6\\e67e1790-32b4-4b5a-90ba-93ef857abf5e.b43ad.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\熊猫_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\熊猫_02_5db08951-a84d-416e-b7d5-3b8e32605cfc.e2bd9.json"
+      },
+      {
+        "name": "羊",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          132,
+          146
+        ],
+        "textureUuid": "73923bd9-a2db-4b39-b1a7-fb656b5815ed",
+        "spriteframe": "subpackages\\game\\import\\32\\32b31bbe-670a-4824-be65-cc6ab73c14fc.95c40.json",
+        "native": "subpackages\\game\\native\\73\\73923bd9-a2db-4b39-b1a7-fb656b5815ed.b862d.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\羊_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\羊_01_32b31bbe-670a-4824-be65-cc6ab73c14fc.95c40.json"
+      },
+      {
+        "name": "羊",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          132,
+          146
+        ],
+        "textureUuid": "84dc8070-4ea0-4d7d-ab74-835fc1444e82",
+        "spriteframe": "subpackages\\game\\import\\e9\\e9568eb5-bfdd-4904-a698-3d9a068d5669.995fd.json",
+        "native": "subpackages\\game\\native\\84\\84dc8070-4ea0-4d7d-ab74-835fc1444e82.880ca.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\羊_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\羊_02_e9568eb5-bfdd-4904-a698-3d9a068d5669.995fd.json"
+      },
+      {
+        "name": "羊驼",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          123,
+          162
+        ],
+        "textureUuid": "105e74a4-08cf-48ec-a2f5-3e6fad1d75ba",
+        "spriteframe": "subpackages\\game\\import\\a2\\a2e1a856-3723-4380-be8c-487e06ed6eb6.75acd.json",
+        "native": "subpackages\\game\\native\\10\\105e74a4-08cf-48ec-a2f5-3e6fad1d75ba.b5673.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\羊驼_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\羊驼_01_a2e1a856-3723-4380-be8c-487e06ed6eb6.75acd.json"
+      },
+      {
+        "name": "羊驼",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          123,
+          162
+        ],
+        "textureUuid": "ef4679f0-9a7d-43b2-961e-d2de7c351faa",
+        "spriteframe": "subpackages\\game\\import\\d6\\d692d776-0b53-42ff-8772-8bf196d218a8.a2cd6.json",
+        "native": "subpackages\\game\\native\\ef\\ef4679f0-9a7d-43b2-961e-d2de7c351faa.8e711.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\羊驼_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\羊驼_02_d692d776-0b53-42ff-8772-8bf196d218a8.a2cd6.json"
+      },
+      {
+        "name": "鹦鹉",
+        "group": "animal",
+        "rect": [
+          0,
+          0,
+          135,
+          164
+        ],
+        "textureUuid": "2352de8b-25f0-4600-ad8c-8289db43abdf",
+        "spriteframe": "subpackages\\game\\import\\1c\\1cc9b0f7-6148-42f0-87e8-95249036766d.32c69.json",
+        "native": "subpackages\\game\\native\\23\\2352de8b-25f0-4600-ad8c-8289db43abdf.6064f.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animal\\鹦鹉_01.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\鹦鹉_01_1cc9b0f7-6148-42f0-87e8-95249036766d.32c69.json"
+      },
+      {
+        "name": "鹦鹉",
+        "group": "animalGray",
+        "rect": [
+          0,
+          0,
+          135,
+          164
+        ],
+        "textureUuid": "7cc8730d-c923-4659-855c-8daa7367ceac",
+        "spriteframe": "subpackages\\game\\import\\e0\\e028fcd4-d0a6-4121-8d6b-a5aa01804dc0.d53ab.json",
+        "native": "subpackages\\game\\native\\7c\\7cc8730d-c923-4659-855c-8daa7367ceac.48b12.png",
+        "outputPng": "animal_art_extracted\\illustrated_single_png\\animalGray\\鹦鹉_02.png",
+        "outputJson": "animal_art_extracted\\illustrated_single_png\\spriteframe_json\\鹦鹉_02_e028fcd4-d0a6-4121-8d6b-a5aa01804dc0.d53ab.json"
+      }
+    ]
+  },
+  "copied": [
+    {
+      "src": "subpackages\\game\\native\\6b\\6bc5fc93-b403-4b31-a0e1-7ccff54c45d7.7b5a8.png",
+      "dst": "animal_art_extracted\\level_spine\\original_cocos_files\\animal.png",
+      "bytes": 54333
+    },
+    {
+      "src": "subpackages\\game\\native\\d6\\d614ee96-d20f-4373-8064-5d92fd589021.ac70a.atlas",
+      "dst": "animal_art_extracted\\level_spine\\original_cocos_files\\animal.atlas",
+      "bytes": 9530
+    },
+    {
+      "src": "subpackages\\game\\native\\83\\83555d90-776b-4e90-8922-4a895ca3ba38.ddf1c.plist",
+      "dst": "animal_art_extracted\\level_spine\\original_cocos_files\\animal.plist",
+      "bytes": 12374
+    },
+    {
+      "src": "subpackages\\game\\import\\8b\\8be0253a-4372-4031-9d9b-d973ada29b46.77914.json",
+      "dst": "animal_art_extracted\\level_spine\\original_cocos_files\\animal.skeletondata.cocos.json",
+      "bytes": 1429844
+    },
+    {
+      "src": "subpackages\\game\\import\\d6\\d614ee96-d20f-4373-8064-5d92fd589021.eebe9.json",
+      "dst": "animal_art_extracted\\level_spine\\original_cocos_files\\animal.atlas.cocos.json",
+      "bytes": 407
+    },
+    {
+      "src": "subpackages\\game\\native\\6b\\6bc5fc93-b403-4b31-a0e1-7ccff54c45d7.7b5a8.png",
+      "dst": "animal_art_extracted\\level_spine\\exported_spine_files\\animal.png",
+      "bytes": 54333
+    }
+  ],
+  "updatedAt": "2026-06-10T02:56:28.376Z",
+  "animalsByBody": {
+    "output": "animal_art_extracted\\level_spine\\animals_by_body",
+    "groups": {
+      "小猫": {
+        "count": 10,
+        "files": [
+          "cat_body.png",
+          "cat_er1.png",
+          "cat_er2.png",
+          "cat_eye.png",
+          "cat_leg1.png",
+          "cat_leg2.png",
+          "cat_leg3.png",
+          "cat_leg4.png",
+          "cat_light.png",
+          "cat_wei.png"
+        ]
+      },
+      "小牛": {
+        "count": 12,
+        "files": [
+          "cattle_angle1.png",
+          "cattle_angle2.png",
+          "cattle_body.png",
+          "cattle_er1.png",
+          "cattle_er2.png",
+          "cattle_eye.png",
+          "cattle_leg1.png",
+          "cattle_leg2.png",
+          "cattle_leg3.png",
+          "cattle_leg4.png",
+          "cattle_light.png",
+          "cattle_wei.png"
+        ]
+      },
+      "小狗": {
+        "count": 10,
+        "files": [
+          "dog_body.png",
+          "dog_er1.png",
+          "dog_er2.png",
+          "dog_eye.png",
+          "dog_leg1.png",
+          "dog_leg2.png",
+          "dog_leg3.png",
+          "dog_leg4.png",
+          "dog_light.png",
+          "dog_wei.png"
+        ]
+      },
+      "小狐狸": {
+        "count": 10,
+        "files": [
+          "fox_body.png",
+          "fox_er1.png",
+          "fox_er2.png",
+          "fox_eye.png",
+          "fox_leg1.png",
+          "fox_leg2.png",
+          "fox_leg3.png",
+          "fox_leg4.png",
+          "fox_light.png",
+          "fox_wei.png"
+        ]
+      },
+      "考拉": {
+        "count": 11,
+        "files": [
+          "kabl_body.png",
+          "kabl_ear1.png",
+          "kabl_ear2.png",
+          "kabl_eye.png",
+          "kabl_juzi.png",
+          "kabl_leg1.png",
+          "kabl_leg2.png",
+          "kabl_leg3.png",
+          "kabl_leg4.png",
+          "kabl_light.png",
+          "kabl_wei.png"
+        ]
+      },
+      "小老鼠": {
+        "count": 10,
+        "files": [
+          "mouse_body.png",
+          "mouse_er1.png",
+          "mouse_er2.png",
+          "mouse_eye.png",
+          "mouse_leg1.png",
+          "mouse_leg2.png",
+          "mouse_leg3.png",
+          "mouse_leg4.png",
+          "mouse_light.png",
+          "mouse_wei.png"
+        ]
+      },
+      "小猪": {
+        "count": 10,
+        "files": [
+          "pig_body.png",
+          "pig_ear1.png",
+          "pig_ear2.png",
+          "pig_eye.png",
+          "pig_leg1.png",
+          "pig_leg2.png",
+          "pig_leg3.png",
+          "pig_leg4.png",
+          "pig_light.png",
+          "pig_wei.png"
+        ]
+      },
+      "小兔": {
+        "count": 10,
+        "files": [
+          "rabbit_body.png",
+          "rabbit_er1.png",
+          "rabbit_er2.png",
+          "rabbit_eye.png",
+          "rabbit_leg1.png",
+          "rabbit_leg2.png",
+          "rabbit_leg3.png",
+          "rabbit_leg4.png",
+          "rabbit_light.png",
+          "rabbit_wei.png"
+        ]
+      },
+      "小羊": {
+        "count": 11,
+        "files": [
+          "sheep_body.png",
+          "sheep_ear1.png",
+          "sheep_ear2.png",
+          "sheep_eye.png",
+          "sheep_hair.png",
+          "sheep_leg1.png",
+          "sheep_leg2.png",
+          "sheep_leg3.png",
+          "sheep_leg4.png",
+          "sheep_light.png",
+          "sheep_wei.png"
+        ]
+      },
+      "其他部件": {
+        "count": 4,
+        "files": [
+          "yun.png",
+          "yun1.png",
+          "yun_eye1.png",
+          "yy.png"
+        ]
+      }
+    }
+  },
+  "illustratedAnimalsByName": {
+    "output": "animal_art_extracted\\illustrated_single_png\\animals_by_name",
+    "groups": {
+      "白鸽": {
+        "count": 2,
+        "sources": [
+          "animal\\白鸽_01.png",
+          "animalGray\\白鸽_02.png"
+        ]
+      },
+      "白狗": {
+        "count": 2,
+        "sources": [
+          "animal\\白狗_01.png",
+          "animalGray\\白狗_02.png"
+        ]
+      },
+      "斑马": {
+        "count": 2,
+        "sources": [
+          "animal\\斑马_01.png",
+          "animalGray\\斑马_02.png"
+        ]
+      },
+      "大象": {
+        "count": 2,
+        "sources": [
+          "animal\\大象_01.png",
+          "animalGray\\大象_02.png"
+        ]
+      },
+      "袋鼠": {
+        "count": 2,
+        "sources": [
+          "animal\\袋鼠_01.png",
+          "animalGray\\袋鼠_02.png"
+        ]
+      },
+      "鳄鱼": {
+        "count": 2,
+        "sources": [
+          "animal\\鳄鱼_01.png",
+          "animalGray\\鳄鱼_02.png"
+        ]
+      },
+      "狗": {
+        "count": 2,
+        "sources": [
+          "animal\\狗_01.png",
+          "animalGray\\狗_02.png"
+        ]
+      },
+      "河马": {
+        "count": 2,
+        "sources": [
+          "animal\\河马_01.png",
+          "animalGray\\河马_02.png"
+        ]
+      },
+      "猴子": {
+        "count": 2,
+        "sources": [
+          "animal\\猴子_01.png",
+          "animalGray\\猴子_02.png"
+        ]
+      },
+      "蝴蝶": {
+        "count": 2,
+        "sources": [
+          "animal\\蝴蝶_01.png",
+          "animalGray\\蝴蝶_02.png"
+        ]
+      },
+      "火烈鸟": {
+        "count": 2,
+        "sources": [
+          "animal\\火烈鸟_01.png",
+          "animalGray\\火烈鸟_02.png"
+        ]
+      },
+      "鸡": {
+        "count": 2,
+        "sources": [
+          "animal\\鸡_01.png",
+          "animalGray\\鸡_02.png"
+        ]
+      },
+      "考拉": {
+        "count": 2,
+        "sources": [
+          "animal\\考拉_01.png",
+          "animalGray\\考拉_02.png"
+        ]
+      },
+      "孔雀": {
+        "count": 2,
+        "sources": [
+          "animal\\孔雀_01.png",
+          "animalGray\\孔雀_02.png"
+        ]
+      },
+      "老鼠": {
+        "count": 2,
+        "sources": [
+          "animal\\老鼠_01.png",
+          "animalGray\\老鼠_02.png"
+        ]
+      },
+      "蚂蚁": {
+        "count": 2,
+        "sources": [
+          "animal\\蚂蚁_01.png",
+          "animalGray\\蚂蚁_02.png"
+        ]
+      },
+      "猫": {
+        "count": 2,
+        "sources": [
+          "animal\\猫_01.png",
+          "animalGray\\猫_02.png"
+        ]
+      },
+      "猫头鹰": {
+        "count": 2,
+        "sources": [
+          "animal\\猫头鹰_01.png",
+          "animalGray\\猫头鹰_02.png"
+        ]
+      },
+      "蜜蜂": {
+        "count": 2,
+        "sources": [
+          "animal\\蜜蜂_01.png",
+          "animalGray\\蜜蜂_02.png"
+        ]
+      },
+      "螃蟹": {
+        "count": 2,
+        "sources": [
+          "animal\\螃蟹_01.png",
+          "animalGray\\螃蟹_02.png"
+        ]
+      },
+      "企鹅": {
+        "count": 2,
+        "sources": [
+          "animal\\企鹅_01.png",
+          "animalGray\\企鹅_02.png"
+        ]
+      },
+      "青蛙": {
+        "count": 2,
+        "sources": [
+          "animal\\青蛙_01.png",
+          "animalGray\\青蛙_02.png"
+        ]
+      },
+      "蛇": {
+        "count": 2,
+        "sources": [
+          "animal\\蛇_01.png",
+          "animalGray\\蛇_02.png"
+        ]
+      },
+      "松鼠": {
+        "count": 2,
+        "sources": [
+          "animal\\松鼠_01.png",
+          "animalGray\\松鼠_02.png"
+        ]
+      },
+      "兔子": {
+        "count": 2,
+        "sources": [
+          "animal\\兔子_01.png",
+          "animalGray\\兔子_02.png"
+        ]
+      },
+      "乌龟": {
+        "count": 1,
+        "sources": [
+          "animal\\乌龟_01.png"
+        ]
+      },
+      "熊猫": {
+        "count": 2,
+        "sources": [
+          "animal\\熊猫_01.png",
+          "animalGray\\熊猫_02.png"
+        ]
+      },
+      "羊": {
+        "count": 2,
+        "sources": [
+          "animal\\羊_01.png",
+          "animalGray\\羊_02.png"
+        ]
+      },
+      "羊驼": {
+        "count": 2,
+        "sources": [
+          "animal\\羊驼_01.png",
+          "animalGray\\羊驼_02.png"
+        ]
+      },
+      "鹦鹉": {
+        "count": 2,
+        "sources": [
+          "animal\\鹦鹉_01.png",
+          "animalGray\\鹦鹉_02.png"
+        ]
+      }
+    }
+  }
+}

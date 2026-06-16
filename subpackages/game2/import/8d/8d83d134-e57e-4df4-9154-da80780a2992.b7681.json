@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "55OvwyTApB75XjOooWJNoF"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "兔子",
+            "rect": [
+                0,
+                0,
+                259,
+                369
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                259,
+                369
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

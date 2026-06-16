@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "6bxfyTtANLMaDhfM/1TEXX"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "animal",
+            "rect": [
+                2,
+                2,
+                1012,
+                265
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                1016,
+                269
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

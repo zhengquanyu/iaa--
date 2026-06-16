@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "8dL2BjTLlEIYeWEmnH1a8h"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_ph_dkwo",
+            "rect": [
+                0,
+                0,
+                254,
+                150
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                254,
+                150
+            ],
+            "capInsets": [
+                119,
+                18,
+                121,
+                15
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

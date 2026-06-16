@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "ebvUJ2IFVJGbr/53rwdCD4"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_sy_btn_zong",
+            "rect": [
+                0,
+                0,
+                165,
+                162
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                165,
+                162
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

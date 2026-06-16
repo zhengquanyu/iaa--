@@ -1,0 +1,10 @@
+function getIllustrateData() {
+    var original = getOriginalIllustrateData();
+    if (original) return original;
+    var list = [
+      { name: "??", dec: "" },
+      { name: "???", dec: "" },
+      { name: "??", dec: "" },
+      { name: "??", dec: "" },
+      { name: "??", dec: "" },
+      { name:

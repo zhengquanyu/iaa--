@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "b9xdSbhn5J/pfIyq8oXn/z"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "蜜蜂",
+            "rect": [
+                0,
+                0,
+                348,
+                252
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                348,
+                252
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

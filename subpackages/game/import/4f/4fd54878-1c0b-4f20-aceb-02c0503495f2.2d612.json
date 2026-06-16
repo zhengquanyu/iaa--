@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "f8Z9Vd2gNMooKPEzws3SO+"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "白狗",
+            "rect": [
+                0,
+                0,
+                141,
+                139
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                141,
+                139
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

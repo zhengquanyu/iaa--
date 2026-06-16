@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "efNkN9LrZI/5pxsBZU7mDe"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_ph_dk2",
+            "rect": [
+                0,
+                0,
+                688,
+                150
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                688,
+                150
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

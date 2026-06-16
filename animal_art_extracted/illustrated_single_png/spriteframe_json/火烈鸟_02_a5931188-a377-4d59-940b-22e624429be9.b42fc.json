@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "d7y/9R0zdJuYJk/E2VTILe"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "火烈鸟",
+            "rect": [
+                0,
+                0,
+                96,
+                154
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                96,
+                154
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

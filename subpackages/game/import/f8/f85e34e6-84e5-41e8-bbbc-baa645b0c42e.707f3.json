@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "1aZjaSJQBMFLdkIFLSp0r5"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_yx_zhu",
+            "rect": [
+                1,
+                0,
+                114,
+                124
+            ],
+            "offset": [
+                0.5,
+                0.5
+            ],
+            "originalSize": [
+                115,
+                125
+            ],
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

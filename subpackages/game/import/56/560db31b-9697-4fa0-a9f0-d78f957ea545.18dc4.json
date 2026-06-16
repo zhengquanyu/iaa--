@@ -1,0 +1,51 @@
+[
+    1,
+    [
+        "fayULU4z1OTbvJxV/tEal6"
+    ],
+    [
+        "_textureSetter"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "img_ty_btn_zhi",
+            "rect": [
+                0,
+                0,
+                296,
+                165
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "originalSize": [
+                296,
+                165
+            ],
+            "capInsets": [
+                124,
+                50,
+                157,
+                109
+            ]
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]
