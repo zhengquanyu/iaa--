@@ -48,7 +48,10 @@
                                        }
                                    ],
                         "include":  [
-
+                                        {
+                                            "type":  "folder",
+                                            "value":  "ui_replacement_runtime"
+                                        }
                                     ]
                     },
     "setting":  {

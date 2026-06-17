@@ -77,7 +77,7 @@ require("./game.bundle.js");
 (function () {
   var patchedStartBtn = null;
   var pauseActionTimes = Object.create(null);
-  var illustratedRenderVersion = 11;
+  var illustratedRenderVersion = 13;
   var sheepSpriteFrame = null;
   var sheepSpriteLoading = false;
   var sheepSpriteWaiters = [];
@@ -91,6 +91,8 @@ require("./game.bundle.js");
   var animalSpriteFrameLoading = Object.create(null);
   var replacementSpriteFrameCache = Object.create(null);
   var replacementSpriteFrameLoading = Object.create(null);
+  var dataUrlImagePathCache = Object.create(null);
+  var puzzleReplacementDataLoaded = false;
   var animalNodeNames = Object.create(null);
   var puzzleHoldTimer = null;
   var puzzleHoldInterval = null;
@@ -113,6 +115,8 @@ require("./game.bundle.js");
   var illustrateFrameLoading = Object.create(null);
   var homeColorModeFrameCache = Object.create(null);
   var homeColorModeFrameLoading = Object.create(null);
+  var uiReplacementFrameCache = Object.create(null);
+  var uiReplacementFrameLoading = Object.create(null);
   var homeColorMode = null;
   var homeColorModeToggleTime = 0;
   var resultNextLastTime = 0;
@@ -213,6 +217,27 @@ require("./game.bundle.js");
     return null;
   }
 
+  function findActivePanelWithChildren(root, names) {
+    if (!root) return null;
+    var ok = root.activeInHierarchy;
+    if (ok) {
+      for (var i = 0; i < names.length; i++) {
+        if (!findChild(root, names[i])) {
+          ok = false;
+          break;
+        }
+      }
+      if (ok) return root;
+    }
+
+    var children = root.children || [];
+    for (var j = children.length - 1; j >= 0; j--) {
+      var found = findActivePanelWithChildren(children[j], names);
+      if (found) return found;
+    }
+    return null;
+  }
+
   function hideTouchableNode(node) {
     if (!node || !node.isValid) return;
     node.active = false;
@@ -271,6 +296,26 @@ require("./game.bundle.js");
     var children = root.children || [];
     for (var i = 0; i < children.length; i++) findNodes(children[i], name, out);
     return out;
+  }
+
+  function clearNodeGraphics(node) {
+    if (!node || !node.isValid || typeof cc === "undefined" || !cc.Graphics || !node.getComponent) return;
+    try {
+      var graphics = node.getComponent(cc.Graphics);
+      if (graphics && graphics.clear) graphics.clear();
+    } catch (err) {}
+  }
+
+  function hideNodeOwnSprite(node) {
+    if (!node || !node.isValid || typeof cc === "undefined" || !cc.Sprite || !node.getComponent) return;
+    try {
+      var sprite = node.getComponent(cc.Sprite);
+      if (sprite) {
+        sprite.spriteFrame = null;
+        sprite.enabled = false;
+      }
+    } catch (err) {}
+    clearNodeGraphics(node);
   }
 
   function collectNodes(root, out) {
@@ -346,12 +391,18 @@ require("./game.bundle.js");
   }
 
   function getHomeColorMode() {
-    homeColorMode = "pure";
+    if (homeColorMode === "pure" || homeColorMode === "multi") return homeColorMode;
+    try {
+      var stored = cc.sys && cc.sys.localStorage && cc.sys.localStorage.getItem("restore_home_color_mode");
+      homeColorMode = stored === "multi" ? "multi" : "pure";
+    } catch (err) {
+      homeColorMode = "pure";
+    }
     return homeColorMode;
   }
 
   function setHomeColorMode(mode) {
-    homeColorMode = "pure";
+    homeColorMode = mode === "multi" ? "multi" : "pure";
     try {
       cc.sys && cc.sys.localStorage && cc.sys.localStorage.setItem("restore_home_color_mode", homeColorMode);
     } catch (err) {}
@@ -392,6 +443,13 @@ require("./game.bundle.js");
     if (node.setLocalZOrder) node.setLocalZOrder(999);
     var children = node.children || [];
     for (var i = 0; i < children.length; i++) setNodeTreeVisible(children[i]);
+  }
+
+  function keepNodeVisibleForTouch(node) {
+    if (!node || !node.isValid) return;
+    node.active = true;
+    node.opacity = 255;
+    if (node.setLocalZOrder) node.setLocalZOrder(999);
   }
 
   function closeMenuPanel(globalData, uiId) {
@@ -449,10 +507,12 @@ require("./game.bundle.js");
       var uiId = globals.uiId;
       console.log("restore start button direct open", !!globalData, !!uiId);
       applyHomeColorMode();
+      scrubFirstFrameButtonsSoon(260);
       globalData.isPuzzle = false;
       globalData.platform && globalData.platform.playEffect && globalData.platform.playEffect("ab:audio/click");
       globalData.gui.remove(uiId.MainPanel);
       globalData.gui.open(uiId.GamePanel);
+      scrubFirstFrameButtonsSoon(420);
     } catch (err) {
       console.error("restore start button failed", err && err.message ? err.message : err);
     }
@@ -1067,6 +1127,7 @@ require("./game.bundle.js");
     if (!target || !target.isValid) return;
     var handler = function (event) {
       try {
+        if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return; }
         if (!panel || !panel.isValid || !panel.activeInHierarchy) return;
         var point = event && event.getLocation && event.getLocation();
         if (!point) return;
@@ -1089,6 +1150,21 @@ require("./game.bundle.js");
 
   function getSpriteComponentFromNode(node) {
     return node && node.isValid && node.getComponent && node.getComponent(cc.Sprite);
+  }
+
+  function applyPuzzleFrameReplacement(root) {
+    if (!root || !root.isValid) return;
+    var frames = findNodes(root, "img_huakuang", []);
+    if (!frames.length && root.name === "img_huakuang") frames.push(root);
+    for (var i = 0; i < frames.length; i++) {
+      var node = frames[i];
+      if (!node || !node.isValid) continue;
+      var sprite = getSpriteComponentFromNode(node);
+      if (!sprite && node.addComponent) sprite = node.addComponent(cc.Sprite);
+      if (!sprite) continue;
+      sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM;
+      applyUiReplacementSprite(sprite, "puzzleFrame", node.width || 343, node.height || 376);
+    }
   }
 
   function fillPuzzleSpriteToNode(sprite, targetNode) {
@@ -1301,6 +1377,7 @@ require("./game.bundle.js");
     if (!scene || !scene.isValid) return;
     try {
       if (!isHomeScene(scene)) return;
+      applyPuzzleFrameReplacement(scene);
       var homePuzzle = findNode(scene, "unLockedPicture") || findNode(scene, "img_huakuang") || findNode(scene, "puzzle");
       if (!homePuzzle || !homePuzzle.isValid) return;
       var globals = getGameGlobals();
@@ -1427,6 +1504,15 @@ require("./game.bundle.js");
     target.active = false;
   }
 
+  function hideGameClubNodeOnly(node) {
+    if (!node || !node.isValid) return;
+    if (node._restoreHomeColorModeSource || node.name === "restoreHomeColorModeBtn") return;
+    hideNodeOwnSprite(node);
+    node.active = false;
+    node.opacity = 0;
+    if (node.pauseSystemEvents) node.pauseSystemEvents(true);
+  }
+
   function hideLabelsWithText(root, text) {
     if (!root || !root.isValid) return;
     var label = root.getComponent && root.getComponent(cc.Label);
@@ -1473,7 +1559,9 @@ require("./game.bundle.js");
     ];
     for (var i = 0; i < names.length; i++) {
       var nodes = findNodes(scene, names[i]);
-      for (var j = 0; j < nodes.length; j++) hideNodeAndParents(nodes[j]);
+      for (var j = 0; j < nodes.length; j++) {
+        hideGameClubNodeOnly(nodes[j]);
+      }
     }
     hideLabelsWithText(scene, "\u6e38\u620f\u5708");
     hideLabelsWithText(scene, "\u670b\u53cb\u5708");
@@ -1488,6 +1576,7 @@ require("./game.bundle.js");
     var data = getPuzzleAnimalData(puzzleIndex);
     if (!data) return;
     globalData._restorePuzzleAnimalData = data;
+    globalData._restoreAnimalDecData = data;
     globalData.animalName = data.name;
     globalData.animalDec = data.dec || data.name;
     try {
@@ -1503,18 +1592,27 @@ require("./game.bundle.js");
     setTimeout(function () {
       try {
         patchAnimalDecPanel(cc.director && cc.director.getScene && cc.director.getScene(), data);
+        installAnimalDecButtonPatch(cc.director && cc.director.getScene && cc.director.getScene());
       } catch (err3) {}
     }, 0);
     setTimeout(function () {
       try {
         patchAnimalDecPanel(cc.director && cc.director.getScene && cc.director.getScene(), data);
+        installAnimalDecButtonPatch(cc.director && cc.director.getScene && cc.director.getScene());
       } catch (err) {}
     }, 80);
+    setTimeout(function () {
+      try {
+        patchAnimalDecPanel(cc.director && cc.director.getScene && cc.director.getScene(), data);
+        installAnimalDecButtonPatch(cc.director && cc.director.getScene && cc.director.getScene());
+      } catch (err4) {}
+    }, 240);
   }
 
   function refreshPuzzlePanelToCurrent(panel, force) {
     if (!panel || !panel.isValid || !panel.activeInHierarchy) return;
     try {
+      applyPuzzleFrameReplacement(panel);
       var globals = getGameGlobals();
       var globalData = globals.globalData;
       ensurePuzzleUserData(globalData);
@@ -1605,8 +1703,7 @@ require("./game.bundle.js");
 
   function patchAnimalDecPanel(scene, data) {
     if (!scene || !data) return;
-    var panel = findPanelWithChildren(scene, ["animalName", "animalDec", "animalIcon"]) ||
-      findPanelWithChildren(scene, ["closeBtn", "shareBtn", "animalIcon"]);
+    var panel = getAnimalDecPanel(scene);
     if (!panel || !panel.activeInHierarchy) return;
     var nameNode = findNode(panel, "animalName");
     var decNode = findNode(panel, "animalDec");
@@ -1620,6 +1717,16 @@ require("./game.bundle.js");
       panel._restoreAnimalDecIconName = data.name;
       loadPuzzleAnimalIconSprite(iconSprite, data.name);
     }
+  }
+
+  function getAnimalDecPanel(scene) {
+    return findActivePanelWithChildren(scene, ["animalName", "animalDec", "animalIcon"]) ||
+      findActivePanelWithChildren(scene, ["closeBtn", "shareBtn", "animalIcon"]);
+  }
+
+  function isAnimalDecPanelOpen(scene) {
+    var panel = getAnimalDecPanel(scene);
+    return !!(panel && panel.isValid && panel.activeInHierarchy);
   }
 
   function closeAnimalDecPanel() {
@@ -1674,39 +1781,114 @@ require("./game.bundle.js");
     target["_restoreAnimalDec_" + name] = true;
   }
 
+  function getAnimalDecCloseButton(panel) {
+    return findNode(panel, "closeBtn") || findNode(panel, "btnClose") || findNode(panel, "backBtn");
+  }
+
+  function getAnimalDecShareButton(panel) {
+    return findNode(panel, "shareBtn");
+  }
+
+  function pointInAnimalDecCloseArea(panel, closeBtn, point) {
+    if (!panel || !panel.isValid || !panel.activeInHierarchy || !point) return false;
+    if (closeBtn && closeBtn.isValid && (pointInNodeTree(closeBtn, point) || pointInNodeBox(closeBtn, point, 90, 70))) return true;
+    if (!panel.getBoundingBoxToWorld) return false;
+    var box = panel.getBoundingBoxToWorld();
+    if (!box || !box.width || !box.height) return false;
+    var relX = point.x - box.x;
+    var relY = point.y - box.y;
+    return relX >= box.width * 0.08 && relX <= box.width * 0.50 &&
+      relY >= box.height * 0.06 && relY <= box.height * 0.24;
+  }
+
+  function pointInAnimalDecShareArea(panel, shareBtn, point) {
+    if (!panel || !panel.isValid || !panel.activeInHierarchy || !point) return false;
+    if (shareBtn && shareBtn.isValid && (pointInNodeTree(shareBtn, point) || pointInNodeBox(shareBtn, point, 90, 70))) return true;
+    if (!panel.getBoundingBoxToWorld) return false;
+    var box = panel.getBoundingBoxToWorld();
+    if (!box || !box.width || !box.height) return false;
+    var relX = point.x - box.x;
+    var relY = point.y - box.y;
+    return relX >= box.width * 0.50 && relX <= box.width * 0.92 &&
+      relY >= box.height * 0.06 && relY <= box.height * 0.24;
+  }
+
+  function consumeAnimalDecTouch(event) {
+    event && event.stopPropagationImmediate && event.stopPropagationImmediate();
+    event && event.stopPropagation && event.stopPropagation();
+  }
+
+  function routeAnimalDecTouch(event) {
+    handleAnimalDecSystemButton(event);
+    consumeAnimalDecTouch(event);
+  }
+
+  function handleAnimalDecSystemButton(event, fallbackPanel) {
+    var livePanel = getAnimalDecPanel(cc.director && cc.director.getScene && cc.director.getScene()) || fallbackPanel;
+    if (!livePanel || !livePanel.isValid || !livePanel.activeInHierarchy) return;
+    var point = event && event.getLocation && event.getLocation();
+    if (!point) return;
+    var liveCloseBtn = getAnimalDecCloseButton(livePanel);
+    var liveShareBtn = getAnimalDecShareButton(livePanel);
+    if (pointInAnimalDecCloseArea(livePanel, liveCloseBtn, point)) {
+      consumeAnimalDecTouch(event);
+      runPauseAction("animalDec_close", closeAnimalDecPanel);
+    } else if (pointInAnimalDecShareArea(livePanel, liveShareBtn, point)) {
+      consumeAnimalDecTouch(event);
+      runPauseAction("animalDec_share", shareAnimalDecPanel);
+    }
+  }
+
+  function installAnimalDecTouchBlocker(panel) {
+    if (!panel || !panel.isValid || !cc.Node) return;
+    if (panel._restoreAnimalDecTouchBlocker && panel._restoreAnimalDecTouchBlocker.isValid) {
+      var oldBlocker = panel._restoreAnimalDecTouchBlocker;
+      oldBlocker.width = panel.width || oldBlocker.width || 1080;
+      oldBlocker.height = panel.height || oldBlocker.height || 1920;
+      oldBlocker.setContentSize && oldBlocker.setContentSize(oldBlocker.width, oldBlocker.height);
+      oldBlocker.zIndex = 9999;
+      return;
+    }
+    var blocker = new cc.Node("restoreAnimalDecTouchBlocker");
+    blocker.opacity = 0;
+    blocker.width = panel.width || 1080;
+    blocker.height = panel.height || 1920;
+    blocker.setContentSize && blocker.setContentSize(blocker.width, blocker.height);
+    blocker.setPosition && blocker.setPosition(0, 0);
+    try { blocker.addComponent && cc.Button && blocker.addComponent(cc.Button); } catch (errBtn) {}
+    try { blocker.addComponent && cc.BlockInputEvents && blocker.addComponent(cc.BlockInputEvents); } catch (errBlock) {}
+    blocker.zIndex = 9999;
+    if (blocker._sgNode && blocker._sgNode.setLocalZOrder) blocker._sgNode.setLocalZOrder(9999);
+    panel.addChild(blocker);
+    var blockOnly = function (event) {
+      consumeAnimalDecTouch(event);
+    };
+    var endHandler = function (event) {
+      handleAnimalDecSystemButton(event, panel);
+      consumeAnimalDecTouch(event);
+    };
+    blocker.on(cc.Node.EventType.TOUCH_START, blockOnly, panel, true);
+    blocker.on(cc.Node.EventType.TOUCH_MOVE, blockOnly, panel, true);
+    blocker.on(cc.Node.EventType.TOUCH_END, endHandler, panel, true);
+    blocker.on(cc.Node.EventType.TOUCH_CANCEL, blockOnly, panel, true);
+    if (cc.Node.EventType.MOUSE_DOWN) blocker.on(cc.Node.EventType.MOUSE_DOWN, blockOnly, panel, true);
+    if (cc.Node.EventType.MOUSE_UP) blocker.on(cc.Node.EventType.MOUSE_UP, endHandler, panel, true);
+    panel._restoreAnimalDecTouchBlocker = blocker;
+  }
+
   function installAnimalDecButtonPatch(scene) {
-    var panel = findPanelWithChildren(scene, ["animalName", "animalDec", "animalIcon"]) ||
-      findPanelWithChildren(scene, ["closeBtn", "shareBtn", "animalIcon"]);
+    var panel = getAnimalDecPanel(scene);
     if (!panel || !panel.activeInHierarchy) return;
-    var closeBtn = findNode(panel, "closeBtn");
-    var shareBtn = findNode(panel, "shareBtn");
+    installAnimalDecTouchBlocker(panel);
+    var closeBtn = getAnimalDecCloseButton(panel);
+    var shareBtn = getAnimalDecShareButton(panel);
     if (closeBtn) addAnimalDecButtonTouch(closeBtn, "close", closeAnimalDecPanel);
     if (shareBtn) addAnimalDecButtonTouch(shareBtn, "share", shareAnimalDecPanel);
 
     if (!panel._restoreAnimalDecSystemTouch && cc.systemEvent && cc.SystemEvent && cc.SystemEvent.EventType) {
-      cc.systemEvent.on(cc.SystemEvent.EventType.TOUCH_END, function (event) {
-        var point = event.getLocation && event.getLocation();
-        if (!panel.isValid || !panel.activeInHierarchy || !point) return;
-        if (closeBtn && closeBtn.isValid && pointInNodeTree(closeBtn, point)) {
-          event.stopPropagation && event.stopPropagation();
-          runPauseAction("animalDec_close", closeAnimalDecPanel);
-        } else if (shareBtn && shareBtn.isValid && pointInNodeTree(shareBtn, point)) {
-          event.stopPropagation && event.stopPropagation();
-          runPauseAction("animalDec_share", shareAnimalDecPanel);
-        }
-      });
+      cc.systemEvent.on(cc.SystemEvent.EventType.TOUCH_END, handleAnimalDecSystemButton, panel, true);
       if (cc.SystemEvent.EventType.MOUSE_UP) {
-        cc.systemEvent.on(cc.SystemEvent.EventType.MOUSE_UP, function (event) {
-          var point = event.getLocation && event.getLocation();
-          if (!panel.isValid || !panel.activeInHierarchy || !point) return;
-          if (closeBtn && closeBtn.isValid && pointInNodeTree(closeBtn, point)) {
-            event.stopPropagation && event.stopPropagation();
-            runPauseAction("animalDec_close", closeAnimalDecPanel);
-          } else if (shareBtn && shareBtn.isValid && pointInNodeTree(shareBtn, point)) {
-            event.stopPropagation && event.stopPropagation();
-            runPauseAction("animalDec_share", shareAnimalDecPanel);
-          }
-        });
+        cc.systemEvent.on(cc.SystemEvent.EventType.MOUSE_UP, handleAnimalDecSystemButton, panel, true);
       }
       panel._restoreAnimalDecSystemTouch = true;
       console.log("restore animal dec button patch installed");
@@ -2041,23 +2223,27 @@ require("./game.bundle.js");
   function addOriginalPuzzleButtonTouch(target, panel) {
     if (!target || !target.isValid || target._restoreOriginalPuzzleButtonTouch) return;
     target.on(cc.Node.EventType.TOUCH_START, function (event) {
+      if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return; }
       event.stopPropagationImmediate && event.stopPropagationImmediate();
       event.stopPropagation && event.stopPropagation();
       puzzleTouchLastTime = Date.now();
       runOriginalPuzzleTouchStart(panel);
     });
     target.on(cc.Node.EventType.TOUCH_MOVE, function (event) {
+      if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return; }
       event.stopPropagationImmediate && event.stopPropagationImmediate();
       event.stopPropagation && event.stopPropagation();
       puzzleTouchLastTime = Date.now();
     });
     target.on(cc.Node.EventType.TOUCH_END, function (event) {
+      if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return; }
       event.stopPropagationImmediate && event.stopPropagationImmediate();
       event.stopPropagation && event.stopPropagation();
       puzzleTouchLastTime = Date.now();
       runOriginalPuzzleTouchEnd(panel);
     });
     target.on(cc.Node.EventType.TOUCH_CANCEL, function (event) {
+      if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return; }
       event.stopPropagationImmediate && event.stopPropagationImmediate();
       event.stopPropagation && event.stopPropagation();
       puzzleTouchLastTime = Date.now();
@@ -2065,6 +2251,7 @@ require("./game.bundle.js");
     });
     if (cc.Node.EventType.MOUSE_DOWN) {
       target.on(cc.Node.EventType.MOUSE_DOWN, function (event) {
+        if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return; }
         if (Date.now() - puzzleTouchLastTime < 350) return;
         event.stopPropagationImmediate && event.stopPropagationImmediate();
         event.stopPropagation && event.stopPropagation();
@@ -2073,6 +2260,7 @@ require("./game.bundle.js");
     }
     if (cc.Node.EventType.MOUSE_UP) {
       target.on(cc.Node.EventType.MOUSE_UP, function (event) {
+        if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return; }
         event.stopPropagationImmediate && event.stopPropagationImmediate();
         event.stopPropagation && event.stopPropagation();
         runOriginalPuzzleTouchEnd(panel);
@@ -2117,6 +2305,7 @@ require("./game.bundle.js");
 
   function handlePuzzleCanvasBridge(panel, event) {
     try {
+      if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return false; }
       if (!panel || !panel.isValid || !panel.activeInHierarchy) return false;
       var point = event && event.getLocation && event.getLocation();
       var puzzleBtn = findNode(panel, "puzzleBtn");
@@ -2140,6 +2329,7 @@ require("./game.bundle.js");
     if (cc.systemEvent && cc.SystemEvent && cc.SystemEvent.EventType) {
       cc.systemEvent.on(cc.SystemEvent.EventType.TOUCH_END, function (event) {
         try {
+          if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return; }
           if (!panel || !panel.isValid || !panel.activeInHierarchy) return;
           var point = event && event.getLocation && event.getLocation();
           if (!point) return;
@@ -2161,6 +2351,7 @@ require("./game.bundle.js");
   }
 
   function cleanupPuzzleButtonProxies(panel) {
+    hidePuzzleButtonProxy();
     if (!panel || !panel.isValid) return;
     var names = ["restorePuzzleOriginalUnlockProxy", "restorePuzzleBtnProxy"];
     for (var i = 0; i < names.length; i++) {
@@ -2272,8 +2463,25 @@ require("./game.bundle.js");
     return null;
   }
 
+  function hidePuzzleButtonProxy() {
+    try {
+      var root = (cc.Canvas && cc.Canvas.instance && cc.Canvas.instance.node) || (cc.director && cc.director.getScene && cc.director.getScene());
+      var proxy = root && findChild(root, "restorePuzzleBtnProxy");
+      if (!proxy || !proxy.isValid) return;
+      proxy.active = false;
+      proxy.opacity = 0;
+      proxy._restorePuzzleProxyPanel = null;
+    } catch (err) {}
+  }
+
+  function isPuzzleButtonProxyUsable(proxy) {
+    var panel = proxy && proxy._restorePuzzleProxyPanel;
+    return !!(proxy && proxy.isValid && panel && panel.isValid && panel.activeInHierarchy);
+  }
+
   function handlePuzzleGlobalPress(panel, event, phase) {
     try {
+      if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return false; }
       if (!panel || !panel.isValid || !panel.activeInHierarchy) return false;
       var point = event && event.getLocation && event.getLocation();
       var hitNode = getPuzzleButtonHitNode(panel);
@@ -2371,8 +2579,10 @@ require("./game.bundle.js");
       if (cc.BlockInputEvents && proxy.addComponent) proxy.addComponent(cc.BlockInputEvents);
     }
     proxy._restorePuzzleProxyPanel = panel;
-    proxy.active = puzzleBtn.active !== false;
-    proxy.opacity = 1;
+    var enabled = panel.activeInHierarchy && puzzleBtn.activeInHierarchy;
+    proxy.active = !!enabled;
+    proxy.opacity = enabled ? 1 : 0;
+    if (!enabled) return proxy;
     proxy.setLocalZOrder && proxy.setLocalZOrder(2147483647);
     proxy.zIndex = 2147483647;
     try {
@@ -2386,46 +2596,56 @@ require("./game.bundle.js");
     proxy.setContentSize && proxy.setContentSize(Math.max(puzzleBtn.width || 0, 520), Math.max(puzzleBtn.height || 0, 260));
     if (!proxy._restorePuzzleBtnProxyTouch) {
       proxy.on(cc.Node.EventType.TOUCH_START, function (event) {
+        if (!isPuzzleButtonProxyUsable(proxy)) { hidePuzzleButtonProxy(); return; }
+        var livePanel = proxy._restorePuzzleProxyPanel;
         event.stopPropagationImmediate && event.stopPropagationImmediate();
         event.stopPropagation && event.stopPropagation();
         puzzleTouchLastTime = Date.now();
-        cleanupPuzzleEffectsSoon(panel, true);
+        cleanupPuzzleEffectsSoon(livePanel, true);
         console.log("restore puzzle proxy touch start");
-        startPuzzleDirectHold(panel);
+        startPuzzleDirectHold(livePanel);
       });
       proxy.on(cc.Node.EventType.TOUCH_END, function (event) {
+        if (!isPuzzleButtonProxyUsable(proxy)) { hidePuzzleButtonProxy(); return; }
+        var livePanel = proxy._restorePuzzleProxyPanel;
         event.stopPropagationImmediate && event.stopPropagationImmediate();
         event.stopPropagation && event.stopPropagation();
         puzzleTouchLastTime = Date.now();
         console.log("restore puzzle proxy touch end");
-        stopPuzzleDirectHold(true, panel);
-        cleanupPuzzleEffectsSoon(panel, true);
+        stopPuzzleDirectHold(true, livePanel);
+        cleanupPuzzleEffectsSoon(livePanel, true);
       });
       proxy.on(cc.Node.EventType.TOUCH_CANCEL, function (event) {
+        if (!isPuzzleButtonProxyUsable(proxy)) { hidePuzzleButtonProxy(); return; }
+        var livePanel = proxy._restorePuzzleProxyPanel;
         event.stopPropagationImmediate && event.stopPropagationImmediate();
         event.stopPropagation && event.stopPropagation();
         puzzleTouchLastTime = Date.now();
-        stopPuzzleDirectHold(false, panel);
-        cleanupPuzzleEffectsSoon(panel, true);
+        stopPuzzleDirectHold(false, livePanel);
+        cleanupPuzzleEffectsSoon(livePanel, true);
       });
       if (cc.Node.EventType.MOUSE_DOWN) {
         proxy.on(cc.Node.EventType.MOUSE_DOWN, function (event) {
+          if (!isPuzzleButtonProxyUsable(proxy)) { hidePuzzleButtonProxy(); return; }
+          var livePanel = proxy._restorePuzzleProxyPanel;
           event.stopPropagationImmediate && event.stopPropagationImmediate();
           event.stopPropagation && event.stopPropagation();
           puzzleTouchLastTime = Date.now();
-          cleanupPuzzleEffectsSoon(panel, true);
+          cleanupPuzzleEffectsSoon(livePanel, true);
           console.log("restore puzzle proxy mouse down");
-          startPuzzleDirectHold(panel);
+          startPuzzleDirectHold(livePanel);
         });
       }
       if (cc.Node.EventType.MOUSE_UP) {
         proxy.on(cc.Node.EventType.MOUSE_UP, function (event) {
+          if (!isPuzzleButtonProxyUsable(proxy)) { hidePuzzleButtonProxy(); return; }
+          var livePanel = proxy._restorePuzzleProxyPanel;
           event.stopPropagationImmediate && event.stopPropagationImmediate();
           event.stopPropagation && event.stopPropagation();
           puzzleTouchLastTime = Date.now();
           console.log("restore puzzle proxy mouse up");
-          stopPuzzleDirectHold(true, panel);
-          cleanupPuzzleEffectsSoon(panel, true);
+          stopPuzzleDirectHold(true, livePanel);
+          cleanupPuzzleEffectsSoon(livePanel, true);
         });
       }
       proxy._restorePuzzleBtnProxyTouch = true;
@@ -2487,6 +2707,7 @@ require("./game.bundle.js");
     if (!panel._restorePuzzlePanelSystemButtons && cc.systemEvent && cc.SystemEvent && cc.SystemEvent.EventType) {
       cc.systemEvent.on(cc.SystemEvent.EventType.TOUCH_START, function (event) {
         if (!panel.isValid || !panel.activeInHierarchy) return;
+        if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return; }
         var point = event.getLocation && event.getLocation();
         var runtimeNow = getPuzzleRuntime(panel);
         var compNow = runtimeNow && runtimeNow.comp;
@@ -2500,6 +2721,7 @@ require("./game.bundle.js");
       });
       cc.systemEvent.on(cc.SystemEvent.EventType.TOUCH_END, function (event) {
         if (!panel.isValid || !panel.activeInHierarchy) return;
+        if (isAnimalDecPanelOpen(cc.director && cc.director.getScene && cc.director.getScene())) { routeAnimalDecTouch(event); return; }
         var point = event.getLocation && event.getLocation();
         var runtimeNow = getPuzzleRuntime(panel);
         var compNow = runtimeNow && runtimeNow.comp;
@@ -2526,6 +2748,7 @@ require("./game.bundle.js");
   function closePuzzlePanel(panel) {
     try {
       stopPuzzleHold(panel);
+      hidePuzzleButtonProxy();
       var globals = getGameGlobals();
       var globalData = globals.globalData;
       var uiId = globals.uiId;
@@ -3287,9 +3510,11 @@ require("./game.bundle.js");
     var illustratedBtn = findNode(scene, "illustratedBtn") || findNode(scene, "illustrateBtn") || findNode(scene, "bookBtn");
     var shareBtn = findNode(scene, "shareBtn") || findNode(scene, "share");
 
-    installHideGameCirclePatch();
     applyHomeSettingButtonLayout(menuBtn, rankBtn, shareBtn);
+    applyHomeEntryButtonReplacement(rankBtn, "homeRankEntry");
+    applyHomeEntryButtonReplacement(shareBtn, "homeShareEntry");
     ensureHomeColorModeButton(scene, rankBtn, shareBtn);
+    installHideGameCirclePatch();
 
     if (menuBtn) addDeepTouch(menuBtn, "homeMenu", openMenuPanel);
     if (rankBtn) addDeepTouch(rankBtn, "homeRank", openRankPanel);
@@ -3315,6 +3540,7 @@ require("./game.bundle.js");
           runPauseAction("homeMenu", openMenuPanel);
         } else if (colorMode && pointInNodeTree(colorMode, point)) {
           event.stopPropagation && event.stopPropagation();
+          toggleHomeColorMode(colorMode);
         } else if (rank && pointInNodeTree(rank, point)) {
           event.stopPropagation && event.stopPropagation();
           runPauseAction("homeRank", openRankPanel);
@@ -3359,6 +3585,60 @@ require("./game.bundle.js");
     }
   }
 
+  function applyHomeEntryButtonReplacement(button, key) {
+    if (!button || !button.isValid || !key) return;
+    var w = button.width || 169;
+    var h = button.height || 181;
+    button.active = true;
+    button.opacity = 255;
+    button.setContentSize && button.setContentSize(w, h);
+    button.setScale && button.setScale(1);
+    hideNodeOwnSprite(button);
+    var fallbackName = "restoreHomeEntryFallback_" + key;
+    var iconName = "restoreHomeEntryIcon_" + key;
+    ensureHomeEntryFallbackLayer(button, key, w, h);
+    var icon = findChild(button, iconName);
+    if (!icon) {
+      icon = new cc.Node(iconName);
+      icon.parent = button;
+      icon.setAnchorPoint && icon.setAnchorPoint(0.5, 0.5);
+    }
+    icon.active = true;
+    icon.opacity = 255;
+    icon.setPosition && icon.setPosition(0, 0);
+    icon.setContentSize && icon.setContentSize(w, h);
+    icon.setScale && icon.setScale(1);
+    icon.setLocalZOrder && icon.setLocalZOrder(1000);
+    var sprite = icon.getComponent && icon.getComponent(cc.Sprite);
+    if (!sprite && icon.addComponent) sprite = icon.addComponent(cc.Sprite);
+    if (sprite) {
+      sprite.enabled = true;
+      sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM;
+    }
+    var children = button.children || [];
+    for (var i = 0; i < children.length; i++) {
+      var child = children[i];
+      if (!child || !child.isValid) continue;
+      if (child.name === fallbackName) continue;
+      if (child.name === iconName) continue;
+      child.active = false;
+      child.opacity = 0;
+    }
+    if (sprite) {
+      loadUiReplacementFrame(key, function (frame) {
+        if (icon && icon.isValid && sprite && frame) {
+          clearNodeGraphics(icon);
+          sprite.spriteFrame = frame;
+          sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM;
+          icon.setContentSize && icon.setContentSize(w, h);
+          setHomeEntryFallbackVisible(button, key, false);
+        } else {
+          setHomeEntryFallbackVisible(button, key, true);
+        }
+      });
+    }
+  }
+
   function loadSpriteFrameInto(sprite, path, fallback) {
     if (!sprite || !path) return;
     var promise = loadAsset(path, cc.SpriteFrame);
@@ -3373,10 +3653,150 @@ require("./game.bundle.js");
     });
   }
 
+  function getUiReplacementImagePath(key) {
+    var fileName = null;
+    if (key === "homeColorPure") fileName = "pure_mode_entry.png";
+    else if (key === "homeColorMulti") fileName = "multi_mode_entry.png";
+    else if (key === "homeRankEntry") fileName = "home_rank_entry.png";
+    else if (key === "homeShareEntry") fileName = "home_share_entry.png";
+    else if (key === "puzzleFrame") fileName = "puzzle_frame.png";
+    if (!fileName) return null;
+    return "subpackages/resources/ui_replacement_runtime/" + fileName;
+  }
+
+  function getUiReplacementDataUrl(key) {
+    try {
+      if (key !== "homeRankEntry" && key !== "homeShareEntry") return null;
+      if (typeof GameGlobal !== "undefined" && (!GameGlobal._restoreUiReplacementData || !GameGlobal._restoreUiReplacementData.getBase64)) {
+        try { require("./ui-replacement-data.js"); } catch (loadErr) {}
+      }
+      var repl = typeof GameGlobal !== "undefined" && GameGlobal._restoreUiReplacementData;
+      return repl && repl.getBase64 ? repl.getBase64(key) : null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function loadUiReplacementFrame(key, callback) {
+    if (!key) {
+      callback && callback(null);
+      return;
+    }
+    if (uiReplacementFrameCache[key]) {
+      callback && callback(uiReplacementFrameCache[key]);
+      return;
+    }
+    if (uiReplacementFrameLoading[key]) {
+      if (callback) uiReplacementFrameLoading[key].push(callback);
+      return;
+    }
+    uiReplacementFrameLoading[key] = callback ? [callback] : [];
+    var dataUrl = getUiReplacementDataUrl(key);
+    if ((key === "homeRankEntry" || key === "homeShareEntry") && !dataUrl) {
+      var missingWaiters = uiReplacementFrameLoading[key] || [];
+      delete uiReplacementFrameLoading[key];
+      for (var missingIndex = 0; missingIndex < missingWaiters.length; missingIndex++) {
+        try { missingWaiters[missingIndex](null); } catch (missingErr) {}
+      }
+      return;
+    }
+    var path = dataUrl || getUiReplacementImagePath(key);
+    var paths = dataUrl ? [dataUrl] : (path ? [path, "./" + path, "/" + path] : []);
+    loadRemoteTextureAsSpriteFrame(paths, 0, function (frame) {
+      if (frame) uiReplacementFrameCache[key] = frame;
+      var waiters = uiReplacementFrameLoading[key] || [];
+      delete uiReplacementFrameLoading[key];
+      for (var i = 0; i < waiters.length; i++) {
+        try { waiters[i](frame || null); } catch (err) {}
+      }
+    });
+  }
+
+  function preloadHomeEntryReplacementFrames() {
+    loadUiReplacementFrame("homeRankEntry");
+    loadUiReplacementFrame("homeShareEntry");
+  }
+
+  function ensureHomeEntryFallbackLayer(button, key, width, height) {
+    if (!button || !button.isValid) return null;
+    var name = "restoreHomeEntryFallback_" + key;
+    var layer = findChild(button, name);
+    if (!layer) {
+      layer = new cc.Node(name);
+      layer.parent = button;
+      layer.setAnchorPoint && layer.setAnchorPoint(0.5, 0.5);
+    }
+    layer.active = true;
+    layer.opacity = 255;
+    layer.setPosition && layer.setPosition(0, 0);
+    layer.setContentSize && layer.setContentSize(width || button.width || 169, height || button.height || 181);
+    layer.setScale && layer.setScale(1);
+    layer.setLocalZOrder && layer.setLocalZOrder(999);
+    drawHomeEntryFallback(layer, key);
+    return layer;
+  }
+
+  function setHomeEntryFallbackVisible(button, key, visible) {
+    var layer = findChild(button, "restoreHomeEntryFallback_" + key);
+    if (!layer || !layer.isValid) return;
+    layer.active = !!visible;
+    layer.opacity = visible ? 255 : 0;
+  }
+
+  function drawHomeEntryFallback(icon, key) {
+    if (!icon || !icon.isValid) return;
+    var g = icon.getComponent(cc.Graphics) || icon.addComponent(cc.Graphics);
+    g.clear && g.clear();
+    var w = icon.width || 169;
+    var h = icon.height || 181;
+    var r = Math.min(w, h) * 0.44;
+    g.lineWidth = 4;
+    g.strokeColor = cc.color(102, 72, 38, 255);
+    g.fillColor = key === "homeRankEntry" ? cc.color(255, 205, 74, 255) : cc.color(83, 178, 236, 255);
+    g.circle(0, 0, r);
+    g.fill();
+    g.stroke();
+    g.fillColor = cc.color(255, 255, 255, 255);
+    if (key === "homeRankEntry") {
+      g.rect(-r * 0.42, -r * 0.32, r * 0.24, r * 0.64);
+      g.rect(-r * 0.12, -r * 0.12, r * 0.24, r * 0.44);
+      g.rect(r * 0.18, -r * 0.50, r * 0.24, r);
+      g.fill();
+    } else {
+      g.circle(-r * 0.18, r * 0.08, r * 0.18);
+      g.circle(r * 0.18, r * 0.08, r * 0.18);
+      g.circle(0, -r * 0.24, r * 0.22);
+      g.fill();
+    }
+  }
+
+  function applyUiReplacementSprite(sprite, key, width, height, fallback) {
+    if (!sprite || !sprite.node || !sprite.node.isValid || !key) return;
+    loadUiReplacementFrame(key, function (frame) {
+      if (sprite && sprite.node && sprite.node.isValid && frame) {
+        clearNodeGraphics(sprite.node);
+        sprite.spriteFrame = frame;
+        sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM;
+        if (width && height && sprite.node.setContentSize) sprite.node.setContentSize(width, height);
+      } else if (fallback) {
+        fallback();
+      }
+    });
+  }
+
   function loadHomeColorModeFrame(sprite, mode, fallback) {
+    if (!sprite || !sprite.node || !sprite.node.isValid) return;
+    var replacementKey = mode === "pure" ? "homeColorPure" : "homeColorMulti";
+    applyUiReplacementSprite(sprite, replacementKey, sprite.node.width, sprite.node.height, function () {
+      loadHomeColorModeFrameFromAsset(sprite, mode, fallback);
+    });
+  }
+
+  function loadHomeColorModeFrameFromAsset(sprite, mode, fallback) {
     if (!sprite || !sprite.node || !sprite.node.isValid) return;
     var path = "ab:game/texture/game/" + (mode === "pure" ? "dsms" : "csms");
     if (homeColorModeFrameCache[path]) {
+      clearNodeGraphics(sprite.node);
       sprite.spriteFrame = homeColorModeFrameCache[path];
       return;
     }
@@ -3397,7 +3817,10 @@ require("./game.bundle.js");
       delete homeColorModeFrameLoading[path];
       for (var i = 0; i < waiters.length; i++) {
         var waiter = waiters[i];
-        if (waiter.sprite && waiter.sprite.node && waiter.sprite.node.isValid && frame) waiter.sprite.spriteFrame = frame;
+        if (waiter.sprite && waiter.sprite.node && waiter.sprite.node.isValid && frame) {
+          clearNodeGraphics(waiter.sprite.node);
+          waiter.sprite.spriteFrame = frame;
+        }
       }
     }).catch(function () {
       var waiters = homeColorModeFrameLoading[path] || [];
@@ -3432,6 +3855,31 @@ require("./game.bundle.js");
     }
   }
 
+  function ensureHomeColorModeFallbackLayer(button, mode) {
+    if (!button || !button.isValid) return null;
+    var layer = findChild(button, "restoreColorModeFallbackIcon");
+    if (!layer) {
+      layer = new cc.Node("restoreColorModeFallbackIcon");
+      layer.parent = button;
+      layer.setAnchorPoint && layer.setAnchorPoint(0.5, 0.5);
+    }
+    layer.active = true;
+    layer.opacity = 255;
+    layer.setPosition && layer.setPosition(0, 0);
+    layer.setScale && layer.setScale(1);
+    layer.setContentSize && layer.setContentSize(button.width > 0 ? button.width : 169, button.height > 0 ? button.height : 181);
+    layer.setLocalZOrder && layer.setLocalZOrder(1001);
+    drawModeFallbackIcon(layer, mode);
+    return layer;
+  }
+
+  function setHomeColorModeFallbackVisible(button, visible) {
+    var layer = findChild(button, "restoreColorModeFallbackIcon");
+    if (!layer || !layer.isValid) return;
+    layer.active = !!visible;
+    layer.opacity = visible ? 255 : 0;
+  }
+
   function fixHomeColorModeLabel(labelNode, mode) {
     var label = labelNode && labelNode.getComponent && labelNode.getComponent(cc.Label);
     if (label) {
@@ -3446,20 +3894,34 @@ require("./game.bundle.js");
 
   function updateHomeColorModeButton(button) {
     if (!button || !button.isValid) return;
+    button.active = true;
+    button.opacity = 255;
+    button.setLocalZOrder && button.setLocalZOrder(1000);
     var mode = getHomeColorMode();
+    ensureHomeColorModeFallbackLayer(button, mode);
     var icon = findChild(button, "restoreColorModeIcon");
     var labelNode = findChild(button, "restoreColorModeLabel");
     if (icon) {
+      icon.active = true;
+      icon.opacity = 255;
+      icon.setLocalZOrder && icon.setLocalZOrder(1002);
       var visualSize = getHomeColorModeVisualSize(button, mode);
       icon.setContentSize && icon.setContentSize(visualSize.width, visualSize.height);
       icon.setScale && icon.setScale(1);
       var sprite = icon.getComponent && icon.getComponent(cc.Sprite);
       if (sprite) {
+        setHomeColorModeFallbackVisible(button, !sprite.spriteFrame);
         loadHomeColorModeFrame(sprite, mode, function () {
-          drawModeFallbackIcon(icon, mode);
+          ensureHomeColorModeFallbackLayer(button, mode);
         });
+        setTimeout(function () {
+          if (sprite && sprite.node && sprite.node.isValid) setHomeColorModeFallbackVisible(button, !sprite.spriteFrame);
+        }, 0);
+        setTimeout(function () {
+          if (sprite && sprite.node && sprite.node.isValid) setHomeColorModeFallbackVisible(button, !sprite.spriteFrame);
+        }, 120);
       } else {
-        drawModeFallbackIcon(icon, mode);
+        ensureHomeColorModeFallbackLayer(button, mode);
       }
     }
     if (labelNode) {
@@ -3496,7 +3958,17 @@ require("./game.bundle.js");
     button.setAnchorPoint && button.setAnchorPoint(0.5, 0.5);
     button.setContentSize && button.setContentSize(refSize.width, refSize.height);
     button.setScale && button.setScale(1);
-    button.setPosition && button.setPosition(rankBtn.x, shareBtn.y);
+    if (button.setPosition) {
+      if (button.parent && rankBtn.parent && shareBtn.parent && button.parent !== rankBtn.parent && button.parent.convertToNodeSpaceAR && rankBtn.parent.convertToWorldSpaceAR) {
+        var rankWorld = rankBtn.parent.convertToWorldSpaceAR(rankBtn.position || cc.v2(rankBtn.x, rankBtn.y));
+        var shareWorld = shareBtn.parent.convertToWorldSpaceAR(shareBtn.position || cc.v2(shareBtn.x, shareBtn.y));
+        var localX = button.parent.convertToNodeSpaceAR(rankWorld);
+        var localY = button.parent.convertToNodeSpaceAR(shareWorld);
+        button.setPosition(localX.x, localY.y);
+      } else {
+        button.setPosition(rankBtn.x, shareBtn.y);
+      }
+    }
 
     var icon = findChild(button, "restoreColorModeIcon");
     if (icon) {
@@ -3541,27 +4013,69 @@ require("./game.bundle.js");
     applyHomeColorMode();
   }
 
+  function getHomeColorModeButtonParent(scene, rankBtn, shareBtn) {
+    var parent = rankBtn && rankBtn.isValid && rankBtn.parent && rankBtn.parent.isValid ? rankBtn.parent : null;
+    if (!parent && shareBtn && shareBtn.isValid && shareBtn.parent && shareBtn.parent.isValid) parent = shareBtn.parent;
+    if (parent && parent.activeInHierarchy) return parent;
+    var canvasNode = cc.Canvas && cc.Canvas.instance && cc.Canvas.instance.node;
+    if (canvasNode && canvasNode.isValid && canvasNode.activeInHierarchy) return canvasNode;
+    return scene;
+  }
+
   function ensureHomeColorModeButton(scene, rankBtn, shareBtn) {
     if (!scene || !scene.isValid || !rankBtn || !rankBtn.isValid || !shareBtn || !shareBtn.isValid) return;
     var button = findChild(scene, "restoreHomeColorModeBtn") || findNode(scene, "restoreHomeColorModeBtn");
     if (!button) {
       var refSize = getHomeButtonReferenceSize(rankBtn, shareBtn);
-      button = new cc.Node("restoreHomeColorModeBtn");
-      button.parent = rankBtn.parent || scene;
+      button = findNode(scene, "clubBtn");
+      if (button && button.isValid) {
+        button._restoreHomeColorModeSource = true;
+        button.name = "restoreHomeColorModeBtn";
+        button.active = true;
+        button.opacity = 255;
+        if (button.resumeSystemEvents) button.resumeSystemEvents(true);
+        hideNodeOwnSprite(button);
+      } else {
+        button = new cc.Node("restoreHomeColorModeBtn");
+        button.parent = getHomeColorModeButtonParent(scene, rankBtn, shareBtn);
+      }
       button.setAnchorPoint && button.setAnchorPoint(0.5, 0.5);
       button.setContentSize(refSize.width, refSize.height);
 
-      var icon = new cc.Node("restoreColorModeIcon");
-      icon.parent = button;
+      var icon = findChild(button, "restoreColorModeIcon");
+      if (!icon) {
+        icon = new cc.Node("restoreColorModeIcon");
+        icon.parent = button;
+      }
       icon.setContentSize(refSize.width, refSize.height);
       icon.setPosition(0, 0);
-      var sprite = icon.addComponent(cc.Sprite);
-      sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM;
+      var sprite = icon.getComponent && icon.getComponent(cc.Sprite);
+      if (!sprite && icon.addComponent) sprite = icon.addComponent(cc.Sprite);
+      if (sprite) sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM;
+    }
+    var safeParent = getHomeColorModeButtonParent(scene, rankBtn, shareBtn);
+    if (safeParent && safeParent.isValid && (!button.parent || !button.parent.isValid || !button.parent.activeInHierarchy)) {
+      button.parent = safeParent;
     }
     button.active = true;
     button.opacity = 255;
+    if (button.resumeSystemEvents) button.resumeSystemEvents(true);
+    button.setLocalZOrder && button.setLocalZOrder(1000);
     fitHomeColorModeButtonToReference(button, rankBtn, shareBtn);
+    var colorIcon = findChild(button, "restoreColorModeIcon");
+    if (colorIcon && colorIcon.isValid) {
+      colorIcon.active = true;
+      colorIcon.opacity = 255;
+      colorIcon.setLocalZOrder && colorIcon.setLocalZOrder(1000);
+    }
     updateHomeColorModeButton(button);
+    var children = button.children || [];
+    for (var i = 0; i < children.length; i++) {
+      var child = children[i];
+      if (!child || !child.isValid || child.name === "restoreColorModeIcon" || child.name === "restoreColorModeFallbackIcon") continue;
+      child.active = false;
+      child.opacity = 0;
+    }
     if (!button._restoreColorModeTouch) {
       button.on(cc.Node.EventType.TOUCH_END, function (event) {
         event.stopPropagation && event.stopPropagation();
@@ -3573,15 +4087,35 @@ require("./game.bundle.js");
 
   function updateGameColorModeButton(button) {
     if (!button || !button.isValid) return;
-    setNodeTreeVisible(button);
+    keepNodeVisibleForTouch(button);
+    hideNodeOwnSprite(button);
     button.setContentSize && button.setContentSize(button.width > 0 ? button.width : 96, button.height > 0 ? button.height : 96);
     button.setScale && button.setScale(1);
     var mode = getHomeColorMode();
-    var spriteNode = findChild(button, "restoreGameColorModeIcon") || button;
+    var spriteNode = findChild(button, "restoreGameColorModeIcon");
+    if (!spriteNode) {
+      spriteNode = new cc.Node("restoreGameColorModeIcon");
+      spriteNode.parent = button;
+      spriteNode.setAnchorPoint && spriteNode.setAnchorPoint(0.5, 0.5);
+      spriteNode.setPosition && spriteNode.setPosition(0, 0);
+    }
+    spriteNode.active = true;
+    spriteNode.opacity = 255;
+    spriteNode.setLocalZOrder && spriteNode.setLocalZOrder(998);
+    spriteNode.setContentSize && spriteNode.setContentSize(button.width > 0 ? button.width : 96, button.height > 0 ? button.height : 96);
+    var children = button.children || [];
+    for (var i = 0; i < children.length; i++) {
+      var child = children[i];
+      if (!child || !child.isValid || child === spriteNode || child.name === "restoreGameColorModeHitProxy") continue;
+      child.active = false;
+      child.opacity = 0;
+    }
     var sprite = spriteNode.getComponent && spriteNode.getComponent(cc.Sprite);
     if (!sprite && spriteNode.addComponent) sprite = spriteNode.addComponent(cc.Sprite);
     if (sprite) {
+      sprite.enabled = true;
       sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM;
+      if (!sprite.spriteFrame) drawModeFallbackIcon(spriteNode, mode);
       loadHomeColorModeFrame(sprite, mode, function () {
         drawModeFallbackIcon(spriteNode, mode);
       });
@@ -3695,6 +4229,7 @@ require("./game.bundle.js");
     if (puzzleFrame._restorePuzzlePatch) return;
 
     puzzleFrame._restorePuzzlePatch = true;
+    applyPuzzleFrameReplacement(scene);
     addDeepTouch(puzzleFrame, "homePuzzle", openPuzzlePanel);
     refreshHomePuzzlePreview(scene, true);
     console.log("restore home puzzle patch installed", puzzleFrame.width, puzzleFrame.height);
@@ -3726,6 +4261,8 @@ require("./game.bundle.js");
     if (puzzlePanel && puzzlePanel.activeInHierarchy) {
       refreshPuzzlePanelToCurrent(puzzlePanel, true);
       installPuzzlePanelComponentButtons(puzzlePanel);
+    } else {
+      hidePuzzleButtonProxy();
     }
     var resultPanel = findPanelWithChildren(scene, ["nextBtn", "puzzleBtn", "selfRankItem"]);
     if (resultPanel && resultPanel.activeInHierarchy) {
@@ -4808,6 +5345,23 @@ require("./game.bundle.js");
     }
   }
 
+  function normalizeIllustrateAnimalSpriteNode(node, referenceNode) {
+    if (!node || !node.isValid) return null;
+    if (referenceNode && referenceNode.isValid && referenceNode !== node) {
+      if (node.setPosition && referenceNode.position) node.setPosition(referenceNode.position);
+      if (node.setAnchorPoint && referenceNode.anchorX !== undefined && referenceNode.anchorY !== undefined) {
+        node.setAnchorPoint(referenceNode.anchorX, referenceNode.anchorY);
+      }
+    }
+    if (node.setContentSize) node.setContentSize(183, 119);
+    node.width = 183;
+    node.height = 119;
+    if (node.setScale) node.setScale(1, 1);
+    var sprite = node.getComponent && node.getComponent(cc.Sprite);
+    if (sprite) sprite.sizeMode = cc.Sprite.SizeMode.RAW;
+    return sprite;
+  }
+
   function makeSpriteBox(parent, x, y, w, h, color) {
     var node = new cc.Node("box");
     node.parent = parent;
@@ -4826,7 +5380,7 @@ require("./game.bundle.js");
       if (typeof GameGlobal === "undefined") return null;
       var repl = GameGlobal._restoreIllustratedReplacementData;
       if (!repl || !repl.getBase64) return null;
-      // path like "ab:game/texture/illustrated/animal/����" or ".../animalGray/����"
+      // path like "ab:game/texture/illustrated/animal/????" or ".../animalGray/????"
       // animalLock paths
       if (path.indexOf("/animalLock/animal/") >= 0) {
         var _alName = path.split("/").pop();
@@ -4860,9 +5414,24 @@ require("./game.bundle.js");
     }
   }
 
+  function ensurePuzzleReplacementDataLoaded() {
+    if (puzzleReplacementDataLoaded) return;
+    puzzleReplacementDataLoaded = true;
+    try {
+      if (typeof GameGlobal !== "undefined" && (!GameGlobal._restoreIllustratedReplacementData || !GameGlobal._restoreIllustratedReplacementData.getBase64)) {
+        try { require("./illustrated-replacement-data.js"); } catch (illustratedErr) {}
+      }
+      require("./puzzle-replacement-data.js");
+    } catch (err) {
+      puzzleReplacementDataLoaded = false;
+      console.error("load puzzle replacement data failed", err && err.message ? err.message : err);
+    }
+  }
+
   function getPuzzleRawReplacementBase64(name, callback) {
     try {
       if (typeof GameGlobal === "undefined" || !name) return callback(null);
+      ensurePuzzleReplacementDataLoaded();
       var repl = GameGlobal._restoreIllustratedReplacementData;
       if (!repl) return callback(null);
       var src = repl.getPuzzleBase64 ? repl.getPuzzleBase64(name) : null;
@@ -4914,10 +5483,12 @@ require("./game.bundle.js");
               illustrateFrameCache[path] = _pzFrame;
               applyIllustrateFrameToSprite(sprite, path, _pzFrame);
             } else {
+              console.error("restore puzzle replacement texture failed", _pzName);
               loadIllustrateSpriteFromRes(sprite, path, 0, 0, false);
             }
           });
         } else {
+          console.error("restore puzzle replacement data missing", _pzName);
           loadIllustrateSpriteFromRes(sprite, path, 0, 0, false);
         }
       });
@@ -5014,6 +5585,7 @@ require("./game.bundle.js");
   function fitIllustrateSprite(sprite, frame, maxW, maxH) {
     if (!sprite || !sprite.node || !sprite.node.isValid) return;
     sprite.sizeMode = cc.Sprite.SizeMode.RAW;
+    if (sprite.node.setScale) sprite.node.setScale(1, 1);
     var rect = frame && frame.getRect && frame.getRect();
     var w = rect && rect.width || sprite.node.width || maxW || 1;
     var h = rect && rect.height || sprite.node.height || maxH || 1;
@@ -5474,14 +6046,48 @@ require("./game.bundle.js");
 
   function makeSpriteFrameFromTexture(texture) {
     if (!texture) return null;
+    if (texture.length && texture[0]) return makeSpriteFrameFromTexture(texture[0]);
     if (cc.SpriteFrame && texture instanceof cc.SpriteFrame) return texture;
     if (cc.Texture2D && texture instanceof cc.Texture2D) return new cc.SpriteFrame(texture);
+    if (texture.texture) return makeSpriteFrameFromTexture(texture.texture);
     if (texture._texture) return new cc.SpriteFrame(texture._texture);
     return null;
   }
 
+  function hashString(value) {
+    value = String(value || "");
+    var hash = 2166136261;
+    for (var i = 0; i < value.length; i++) {
+      hash ^= value.charCodeAt(i);
+      hash += (hash << 1) + (hash << 4) + (hash << 7) + (hash << 8) + (hash << 24);
+    }
+    return (hash >>> 0).toString(16);
+  }
+
+  function dataUrlToWxTempFile(path) {
+    try {
+      if (typeof path !== "string" || path.indexOf("data:image/") !== 0) return path;
+      var wxObj = typeof wx !== "undefined" ? wx : (typeof GameGlobal !== "undefined" && GameGlobal.wx);
+      if (!wxObj || !wxObj.env || !wxObj.env.USER_DATA_PATH || !wxObj.getFileSystemManager) return path;
+      if (dataUrlImagePathCache[path]) return dataUrlImagePathCache[path];
+      var comma = path.indexOf(",");
+      if (comma < 0) return path;
+      var ext = path.indexOf("image/jpeg") >= 0 ? ".jpg" : ".png";
+      var filePath = wxObj.env.USER_DATA_PATH + "/restore_img_" + hashString(path) + "_" + path.length + ext;
+      var fs = wxObj.getFileSystemManager();
+      try { fs.accessSync && fs.accessSync(filePath); dataUrlImagePathCache[path] = filePath; return filePath; } catch (accessErr) {}
+      fs.writeFileSync(filePath, path.slice(comma + 1), "base64");
+      dataUrlImagePathCache[path] = filePath;
+      console.log("restore data url cached", filePath);
+      return filePath;
+    } catch (err) {
+      return path;
+    }
+  }
+
   function loadImagePathAsSpriteFrame(path, callback) {
     try {
+      path = dataUrlToWxTempFile(path);
       var wxObj = typeof wx !== "undefined" ? wx : (typeof GameGlobal !== "undefined" && GameGlobal.wx);
       var image = wxObj && wxObj.createImage ? wxObj.createImage() : (typeof Image !== "undefined" ? new Image() : null);
       if (!image || !cc.Texture2D) {
@@ -5511,6 +6117,14 @@ require("./game.bundle.js");
       return;
     }
     var path = paths[index];
+    if (typeof path === "string" && path.indexOf("data:image/") === 0) {
+      var convertedPath = dataUrlToWxTempFile(path);
+      if (convertedPath !== path) {
+        paths = paths.slice();
+        paths[index] = convertedPath;
+        path = convertedPath;
+      }
+    }
     var done = function (err, asset) {
       var frame = !err && makeSpriteFrameFromTexture(asset);
       if (frame) callback(frame);
@@ -5863,9 +6477,38 @@ require("./game.bundle.js");
   function openAnimalDec(data) {
     try {
       var globals = getGameGlobals();
-      globals.globalData.animalName = data.name;
-      globals.globalData.animalDec = data.dec || data.name;
+      if (!data || !data.name) return;
+      var repl = typeof GameGlobal !== "undefined" && GameGlobal._restoreIllustratedReplacementData;
+      var dec = data.dec || (repl && repl.getDesc && repl.getDesc(data.name)) || data.name;
+      var viewData = { name: data.name, dec: dec };
+      globals.globalData._restoreAnimalDecData = viewData;
+      globals.globalData._restorePuzzleAnimalData = null;
+      globals.globalData.animalName = viewData.name;
+      globals.globalData.animalDec = viewData.dec;
+      try { globals.globalData.gui.remove(globals.uiId.AnimalDecPanel); } catch (removeErr) {}
       globals.globalData.gui.open(globals.uiId.AnimalDecPanel);
+      try {
+        patchAnimalDecPanel(cc.director && cc.director.getScene && cc.director.getScene(), viewData);
+        installAnimalDecButtonPatch(cc.director && cc.director.getScene && cc.director.getScene());
+      } catch (patchErr) {}
+      setTimeout(function () {
+        try {
+          patchAnimalDecPanel(cc.director && cc.director.getScene && cc.director.getScene(), viewData);
+          installAnimalDecButtonPatch(cc.director && cc.director.getScene && cc.director.getScene());
+        } catch (err0) {}
+      }, 0);
+      setTimeout(function () {
+        try {
+          patchAnimalDecPanel(cc.director && cc.director.getScene && cc.director.getScene(), viewData);
+          installAnimalDecButtonPatch(cc.director && cc.director.getScene && cc.director.getScene());
+        } catch (err1) {}
+      }, 80);
+      setTimeout(function () {
+        try {
+          patchAnimalDecPanel(cc.director && cc.director.getScene && cc.director.getScene(), viewData);
+          installAnimalDecButtonPatch(cc.director && cc.director.getScene && cc.director.getScene());
+        } catch (err2) {}
+      }, 240);
     } catch (err) {
       console.error("restore illustrated open dec failed", err && err.message ? err.message : err);
     }
@@ -5970,11 +6613,11 @@ require("./game.bundle.js");
     var animalNode = findNode(item, "animal");
     if (grayNode && grayNode.getComponent(cc.Sprite)) {
       grayNode.active = true;
-      loadIllustrateSprite(grayNode.getComponent(cc.Sprite), "ab:game/texture/illustrated/animalGray/" + itemData.name);
+      loadIllustrateSpriteFit(normalizeIllustrateAnimalSpriteNode(grayNode), "ab:game/texture/illustrated/animalGray/" + itemData.name, 183, 119);
     }
     if (animalNode && animalNode.getComponent(cc.Sprite)) {
       animalNode.active = !!unlocked;
-      loadIllustrateSprite(animalNode.getComponent(cc.Sprite), "ab:game/texture/illustrated/animal/" + itemData.name);
+      loadIllustrateSpriteFit(normalizeIllustrateAnimalSpriteNode(animalNode, grayNode), "ab:game/texture/illustrated/animal/" + itemData.name, 183, 119);
     }
   }
 
@@ -6104,12 +6747,43 @@ require("./game.bundle.js");
     if (!GameGlobal.cc || !cc.director || !cc.director.getScene()) return;
     try {
       var globals = getGameGlobals();
-      var data = globals.globalData && globals.globalData._restorePuzzleAnimalData;
+      var data = globals.globalData && (globals.globalData._restoreAnimalDecData || globals.globalData._restorePuzzleAnimalData);
       if (data) patchAnimalDecPanel(cc.director.getScene(), data);
       installAnimalDecButtonPatch(cc.director.getScene());
     } catch (err) {}
   }
 
+  function scrubFirstFrameButtons() {
+    try { preloadHomeEntryReplacementFrames(); } catch (errPreload) {}
+    try { installHomeButtonPatch(); } catch (err1) {}
+    try { installHideGameCirclePatch(); } catch (err0) {}
+    try { installGamePropPatch(); } catch (err2) {}
+  }
+
+  function scrubFirstFrameButtonsSoon(duration) {
+    var start = Date.now();
+    var total = typeof duration === "number" ? duration : 360;
+    var tick = function () {
+      scrubFirstFrameButtons();
+      if (Date.now() - start >= total) return;
+      if (typeof requestAnimationFrame === "function") requestAnimationFrame(tick);
+      else setTimeout(tick, 16);
+    };
+    tick();
+  }
+
+  function installFirstFrameButtonScrubHooks() {
+    if (!cc || !cc.director || !cc.Director || cc.director._restoreFirstFrameButtonScrubHooks) return;
+    cc.director._restoreFirstFrameButtonScrubHooks = true;
+    var scrub = function () { scrubFirstFrameButtons(); };
+    try { cc.director.on(cc.Director.EVENT_BEFORE_UPDATE, scrub); } catch (err0) {}
+    try { cc.director.on(cc.Director.EVENT_BEFORE_DRAW, scrub); } catch (err1) {}
+    try { cc.director.on(cc.Director.EVENT_AFTER_SCENE_LAUNCH, function () { scrubFirstFrameButtonsSoon(500); }); } catch (err2) {}
+  }
+
+  installFirstFrameButtonScrubHooks();
+  preloadHomeEntryReplacementFrames();
+  scrubFirstFrameButtonsSoon(480);
   setInterval(installStartPatch, 500);
   setInterval(installInitialSettingStatePatch, 500);
   setInterval(installHomeButtonPatch, 500);
@@ -6146,7 +6820,7 @@ require("./game.bundle.js");
     var repl = loadIllustrated();
     if (!puzzleLoaded) {
       puzzleLoaded = true;
-      try { require("./puzzle-replacement-data.js"); }
+      try { ensurePuzzleReplacementDataLoaded(); }
       catch (err) { console.error("load puzzle replacement data failed", err && err.message ? err.message : err); }
       repl = GameGlobal._restoreIllustratedReplacementData || repl;
     }
